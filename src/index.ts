@@ -5,6 +5,7 @@ import express from "express";
 import { createServer } from "http";
 import mongoose from "mongoose";
 import { router as authRouter } from "./auth.router";
+import { router as propertyRouter } from "./properties.router";
 
 export const sessionCookieName = "userId";
 
@@ -16,6 +17,7 @@ app.use(json());
 app.use(express.static("public"));
 
 app.use("/api/auth", authRouter);
+app.use("/api/properties", propertyRouter);
 
 const server = createServer(app);
 const port = process.env.PORT ?? 3000;

@@ -19,7 +19,8 @@ export async function redirect() {
     const user = await getJSON("/api/auth/currentUser");
     const currentWindowLocation = window.location.href;
 
-    if (!user && !isEntryPage(currentWindowLocation)) {
+    if (!user && window.location.href.includes("newPost.html")) {
+      // update when creating add post form
       window.location.replace("/login.html");
     } else if (user && isEntryPage(currentWindowLocation)) {
       window.location.replace("/");
@@ -39,12 +40,19 @@ function isEntryPage(location: string): boolean {
 }
 
 export function handleUser(user: any) {
+  const userDiv = document.getElementById("username");
+
   if (!user) {
     return;
   }
 
   document.body.classList.add("logged-in");
-  document.getElementById("username")!.textContent = user.username;
+
+  if (!userDiv) {
+    return;
+  }
+
+  userDiv.textContent = user.username;
 }
 
 export async function getCurrentUser() {
