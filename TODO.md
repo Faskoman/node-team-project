@@ -2,7 +2,7 @@
 * online renting/selling platform
 
 ## Pages
-1. ### Home (list)
+1. ### Home (list) --- (itzhak)
     - Header (brand name + user + liked properties + add new posrt button)
     - search bar (by catrgories)
     - List (from newest to oldest)
@@ -21,16 +21,16 @@
     - upload pictures
     - (see property details...)
 
-5. ### Login / Register
+5. ### Login / Register --- (Assaf)
     - If logged allow to add posts
     - redirect
-    * redirect from login/register to index if logged in
-    * redirect to login/register if trying to add post and not logged
+        * redirect from login/register to index if logged in
+        * redirect to login/register if trying to add post and not logged
 
 
 ## Models
-1. users
-2. properties
+1. users - (assaf)
+2. properties 
 3. messages? 
     - press on member to send him a message
 
