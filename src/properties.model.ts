@@ -9,8 +9,8 @@ interface Property extends Document {
   city: string;
   bedrooms: number;
   floor: number;
-  squareFootage: number;
-  cost: { monthlyRent?: number; price?: number };
+  squareMeters: number;
+  cost: { monthlyRentInNIS?: number; priceInNIS?: number };
   amenities: {
     hasBalcony: boolean;
     hasParking: boolean;
@@ -41,10 +41,10 @@ const propertySchema = new Schema<Property>({
   city: { type: String, required: true },
   bedrooms: { type: Number, required: true },
   floor: { type: Number, required: true },
-  squareFootage: { type: Number, required: true },
+  squareMeters: { type: Number, required: true },
   cost: {
-    monthlyRent: { type: Number },
-    price: { type: Number },
+    monthlyRentInNIS: { type: Number },
+    priceInNIS: { type: Number },
   },
   amenities: {
     hasBalcony: { type: Boolean },
