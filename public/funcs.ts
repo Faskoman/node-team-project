@@ -59,3 +59,23 @@ export async function getCurrentUser() {
   const user = await getJSON("/api/auth/currentUser");
   return user;
 }
+
+export function logout() {
+  document.getElementById("logoutBtn")?.addEventListener("click", async () => {
+    try {
+      await fetch("/api/auth/logout", {
+        method: "GET",
+        credentials: "same-origin",
+      });
+
+      new Promise<void>((resolve) => {
+        window.location.href = "/api/auth/logout";
+        resolve();
+      }).then(() => {
+        window.location.reload();
+      });
+    } catch (error) {
+      console.error("An error occurred during logout", error);
+    }
+  });
+}
