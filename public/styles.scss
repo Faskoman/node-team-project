@@ -1,3 +1,4 @@
+@import 'colors'; 
 *,
 *::before,
 *::after {
@@ -13,7 +14,13 @@ html {
     color-scheme: light dark;
 }
 
+.site-header {
+    box-shadow: 0px 7px 12px -4px rgba(0, 0, 0, 0.2);
+}
+
 body {
+    background-color: $background;
+    color: $text;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -24,6 +31,10 @@ select {
     font-size: inherit;
     font-family: inherit;
     line-height: inherit;
+}
+
+ul, li {
+    list-style: none;
 }
 
 .flow {
