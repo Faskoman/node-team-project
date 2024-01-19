@@ -4,7 +4,7 @@ $marked: #363636;
 $unmarked: #CCCCCC;
 
 .details-main-flow {
-    width: min(75ch, 100% - 2rem);
+    width: min(85ch, 100% - 2rem);
     margin-inline: auto;
 }
 
@@ -55,7 +55,7 @@ $unmarked: #CCCCCC;
     font-size: calc(.5rem + 0.5vw);
     border-radius: 10px;
     width: fit-content;
-    padding: .5ch;
+    padding: .5em;
 }
 
 .symbols {
@@ -63,8 +63,36 @@ $unmarked: #CCCCCC;
     stroke: currentColor;
     height: .8rem;
     aspect-ratio: 1;
+    transform: translateY(10%);
 }
 
 .symbol-container {
     margin-right: 10px;
+}
+
+#property-pictures {
+    display: grid;
+    grid-template-columns: 2fr .5vw 1fr;
+    grid-template-rows: 1fr .5vw 1fr;
+}
+
+#primary-picture {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px 0 0 16px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+}
+
+#secondary-picture {
+    width: 100%;
+    border-radius: 0 16px 0 0;
+    grid-column: 3 / 4;
+}
+
+#tertiary-picture {
+    width: 100%;
+    border-radius: 0 0 16px 0;
+    grid-row: 3 / 4;
+    grid-column: 3 / 4;
 }
