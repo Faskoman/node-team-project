@@ -1,5 +1,5 @@
 import { getPropertyDetails } from "./Property.js";
-import { getJSON, handleUser, logout } from "./funcs.js";
+import { addNumberSuffix, getJSON, handleUser, logout } from "./funcs.js";
 
 async function app() {
   const [user, property] = await Promise.all([
@@ -17,11 +17,14 @@ async function app() {
   renderPropertyField("neighborhood");
   renderPropertyField("city");
   renderPropertyField("bedrooms");
+
   if (property.floor === 0) {
     document.getElementById("property-floor")!.innerText = "Ground";
   } else {
-    renderPropertyField("floor");
+    const formattedFloor = addNumberSuffix(property.floor);
+    document.getElementById("property-floor")!.innerText = formattedFloor;
   }
+  
   renderPropertyField("squareMeters");
   renderPropertyField("description");
   renderAmenity("arePetsAllowed");

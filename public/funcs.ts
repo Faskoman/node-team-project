@@ -79,3 +79,20 @@ export function logout() {
     }
   });
 }
+
+export function addNumberSuffix(number: number): string {
+  const suffixes = ["th", "st", "nd", "rd"];
+  const remainder10 = number % 10;
+  const remainder100 = number % 100;
+
+  return (
+    number +
+    (remainder10 === 1 && remainder100 !== 11
+      ? suffixes[1]
+      : remainder10 === 2 && remainder100 !== 12
+      ? suffixes[2]
+      : remainder10 === 3 && remainder100 !== 13
+      ? suffixes[3]
+      : suffixes[0])
+  );
+}
