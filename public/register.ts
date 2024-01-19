@@ -8,6 +8,7 @@ document.forms.namedItem("register")?.addEventListener("submit", async (e) => {
     const body = JSON.stringify({
       email: formData.get("email"),
       username: formData.get("username"),
+      phone: formData.get("phone"),
       password: formData.get("password"),
     });
   

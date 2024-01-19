@@ -10,17 +10,18 @@ expires.setDate(now.getDate() + 1);
 
 router.post("/register", async (req, res, next) => {
   try {
-    const { email, username, password } = req.body;
+    const { email, username, phone, password } = req.body;
 
-    if (!email || !username || !password) {
+    if (!email || !username || !password || !phone) {
       res.status(400);
-      res.send("Must provide email, username and password");
+      res.send("Must provide email, username, phone and password");
       return;
     }
 
     const user = await User.create({
       email,
       username,
+      phone,
       password,
     });
 

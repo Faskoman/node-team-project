@@ -56,3 +56,11 @@ ul, li {
     display: flex;
     justify-content: center;
 }
+
+.--adapted-text-size {
+    font-size: calc(.2rem + 1vw);
+}
+
+.display-none {
+    display: none;
+}
