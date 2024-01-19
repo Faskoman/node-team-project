@@ -12,6 +12,7 @@ async function app() {
   handleUser(user);
   logout();
 
+  renderPictures();
   renderPropertyField("title");
   renderPropertyField("type");
   renderPropertyField("neighborhood");
@@ -91,6 +92,35 @@ async function app() {
 
     contactSpan.innerText =
       property.contactInformation[contactField].toString();
+  }
+
+  function renderPictures() {
+    const picturesContainer = document.getElementById("property-pictures");
+
+    if (!picturesContainer) {
+      throw new Error(`Pictures container not found`);
+    }
+
+    picturesContainer.innerHTML = "";
+
+    for (let i = 0; i < property.images.length; i++) {
+      const pictureElement = document.createElement("img");
+      pictureElement.src = property.images[i];
+      pictureElement.alt = "property picture";
+      pictureElement.classList.add(`property-picture-${i + 1}`);
+
+      if (property.images.length === 1) {
+        pictureElement.classList.add("only-one-picture");
+      } else if (property.images.length === 2 && i === 1) {
+        pictureElement.classList.add("only-two-pictures");
+      }
+
+      if (i === 3) {
+        return;
+      }
+
+      picturesContainer.appendChild(pictureElement);
+    }
   }
 }
 

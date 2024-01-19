@@ -3,17 +3,18 @@
 
 ## Pages
 1. ### Home (list) --- (itzhak)
-    - Header (brand name + user + liked properties + add new posrt button) 🟠
+    - Header (brand name + user + liked properties + add new post button) 🟠
     - search bar (by catrgories)
     - List (from newest to oldest)
 
-2. ### Property details --- (assaf)
-    - Picture?
+2. ### Property details ✅
+    - Picture? 🟢
     - Location - Title 🟢
     - Asset type, neighborhood, city 🟢
     - number of rooms, floor, size 🟢
     - Details (about the property) 🟢
-    - Contact
+    - Contact Info 🟢
+    - Message contact 🔴
 
 3. ### Add a new post
     - only users can add
@@ -23,7 +24,7 @@
 
 5. ### Login / Register ✅
     - If logged allow to add posts 🔴
-    - redirect 
+    - redirect 🟢
         * redirect from login/register to index if logged in 🟢
         * redirect to login/register if trying to add post and not logged 🟠 (just need to change name of href)
 
