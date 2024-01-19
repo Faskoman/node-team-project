@@ -12,14 +12,18 @@ async function app() {
   handleUser(user);
   logout();
 
-  renderPropertyField("title")
-  renderPropertyField("type")
-  renderPropertyField("neighborhood")
-  renderPropertyField("city")
-  renderPropertyField("bedrooms")
-  renderPropertyField("floor")
-  renderPropertyField("squareMeters")
-  renderPropertyField("description")
+  renderPropertyField("title");
+  renderPropertyField("type");
+  renderPropertyField("neighborhood");
+  renderPropertyField("city");
+  renderPropertyField("bedrooms");
+  if (property.floor === 0) {
+    document.getElementById("property-floor")!.innerText = "Ground";
+  } else {
+    renderPropertyField("floor");
+  }
+  renderPropertyField("squareMeters");
+  renderPropertyField("description");
 
   function renderPropertyField(field: keyof typeof property) {
     const details = document.getElementById(`property-${field}`);

@@ -3,14 +3,36 @@
 $marked: #363636;
 $unmarked: #CCCCCC;
 
+.details-main-flow {
+    width: min(75ch, 100% - 2rem);
+    margin-inline: auto;
+}
+
 .site-header__title {
     text-decoration: none;
     color: inherit;
 }
 
+#property-title {
+    font-size: calc(1.2rem + 0.5vw);
+    font-weight: 700;
+}
+
+#property-description {
+    font-size: calc(.5rem + 0.5vw);
+    text-wrap: balance;
+    width: fit-content;
+}
+
 #amenities-list {
     color: $unmarked;
     font-size: smaller;
+    padding: 0;
+
+    &>* {
+        margin: 1ch 1ch 0 0;
+        width: fit-content;
+    }
 }
 
 .checked-amenity {
@@ -18,7 +40,31 @@ $unmarked: #CCCCCC;
     font-weight: 600;
 }
 
+.main-details-container {
+    width: fit-content;
+    position: relative;
+
+    &>:nth-child(1)::after,
+    &>:nth-child(2)::after {
+        content: ",";
+    }
+}
+
+.secondary-details-container {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: calc(.5rem + 0.5vw);
+    border-radius: 10px;
+    width: fit-content;
+    padding: .5ch;
+}
+
 .symbols {
-    aspect-ratio: 1;
+    stroke-width: 1.5;
+    stroke: currentColor;
     height: .8rem;
+    aspect-ratio: 1;
+}
+
+.symbol-container {
+    margin-right: 10px;
 }
