@@ -25,8 +25,13 @@
                 <input id="username" name="username" type="text" required />
             </div>
             <div class="columned-flex">
-                <label for="password">Password <button type="button" id="toggle-password"
-                        tabindex="0">Show</button></label>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" pattern="[0-9]{10}" required />
+            </div>
+            <div class="columned-flex">
+                <label for="password">Password
+                    <button type="button" id="toggle-password" tabindex="0">Show</button>
+                </label>
                 <input id="password" name="password" type="password" required />
             </div>
             <button class="flow">Register</button>

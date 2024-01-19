@@ -9,10 +9,10 @@
 
 2. ### Property details --- (assaf)
     - Picture?
-    - Location - Title
-    - Asset type, neighborhood, city
-    - number of rooms, floor, size
-    - Details (about the property)
+    - Location - Title 🟢
+    - Asset type, neighborhood, city 🟢
+    - number of rooms, floor, size 🟢
+    - Details (about the property) 🟢
     - Contact
 
 3. ### Add a new post
