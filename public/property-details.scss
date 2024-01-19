@@ -1,0 +1,19 @@
+@import 'colors';
+
+$marked: #363636;
+$unmarked: #CCCCCC;
+
+.site-header__title {
+    text-decoration: none;
+    color: inherit;
+}
+
+#amenities-list {
+    color: $unmarked;
+    font-size: smaller;
+}
+
+.checked-amenity {
+    color: $marked;
+    font-weight: 600;
+}

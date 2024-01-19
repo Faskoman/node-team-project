@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rentMe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="property-details.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <h1><a class="site-header__title" href="index.html">rentMe</a></h1>
+
+        <button>liked properties</button>
+        <button>➕ new post</button>
+        <button id="logoutBtn">Logout</button>
+        <button>user</button>
+    </header>
+
+    <main>
+        <article id="property-details">
+            <div>
+                <h2 id="property-title"></h2>
+                <span id="property-type"></span>
+                <span id="property-neighborhood"></span>
+                <span id="property-city"></span>
+            </div>
+            <div>
+                <span id="property-bedrooms"></span>
+                <span id="property-floor"></span>
+                <span id="property-squareMeters"></span>
+            </div>
+            <div>
+                <p id="property-description"></p>
+            </div>
+            <div id="property-amenities">
+                <h3>What's in the venue?</h3>
+                <ul id="amenities-list">
+                    <li class="checked-amenity" id="property-hasBalcony">Balcony</li>
+                    <li class="checked-amenity" id="property-hasParking">Parking</li>
+                    <li class="checked-amenity" id="property-hasAC">AC</li>
+                    <li id="property-arePetsAllowed">Pets</li>
+                    <li id="property-isSmokingAllowed">Smoking</li>
+                    <li id="property-hasElevator">Elevator</li>
+                </ul>
+            </div>
+        </article>
+    </main>
+
+    <script type="module" src="property-details.js"></script>
+</body>
+
+</html>
