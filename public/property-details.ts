@@ -11,6 +11,25 @@ async function app() {
 
   handleUser(user);
   logout();
+
+  renderPropertyField("title")
+  renderPropertyField("type")
+  renderPropertyField("neighborhood")
+  renderPropertyField("city")
+  renderPropertyField("bedrooms")
+  renderPropertyField("floor")
+  renderPropertyField("squareMeters")
+  renderPropertyField("description")
+
+  function renderPropertyField(field: keyof typeof property) {
+    const details = document.getElementById(`property-${field}`);
+
+    if (!details) {
+      throw new Error(`${field} wasn't found!`);
+    }
+
+    details.innerText = property[field]!.toString();
+  }
 }
 
 app();
