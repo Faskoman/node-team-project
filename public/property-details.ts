@@ -17,6 +17,9 @@ async function app() {
   renderPropertyField("neighborhood");
   renderPropertyField("city");
   renderPropertyField("bedrooms");
+  renderTransaction();
+  renderContactInfo("name");
+  renderContactInfo("phone");
 
   if (property.floor === 0) {
     document.getElementById("property-floor")!.innerText = "Ground";
@@ -24,7 +27,7 @@ async function app() {
     const formattedFloor = addNumberSuffix(property.floor);
     document.getElementById("property-floor")!.innerText = formattedFloor;
   }
-  
+
   renderPropertyField("squareMeters");
   renderPropertyField("description");
   renderAmenity("arePetsAllowed");
@@ -34,12 +37,25 @@ async function app() {
   renderAmenity("hasParking");
   renderAmenity("isSmokingAllowed");
 
-  const transactionSpan = document.getElementById("property-transaction");
+  function renderTransaction() {
+    const transactionSpan = document.getElementById("property-transaction");
 
-  if (transactionSpan) {
-    property.transaction === "Lease"
-      ? (transactionSpan.innerText = "Available for Lease")
-      : (transactionSpan.innerText = "For Sale");
+    if (transactionSpan) {
+      const leaseText = "For Lease";
+      const saleText = "For Sale";
+
+      transactionSpan.innerText =
+        property.transaction === "Lease" ? leaseText : saleText;
+    }
+
+    const propertyCost = document.getElementById("property-cost");
+
+    if (propertyCost) {
+      propertyCost.innerText =
+        property.transaction === "Lease"
+          ? (property.cost.monthlyRentInNIS ?? "").toLocaleString()
+          : (property.cost.priceInNIS ?? "").toLocaleString();
+    }
   }
 
   function renderPropertyField(field: keyof typeof property) {
@@ -62,6 +78,19 @@ async function app() {
     if (property.amenities[amenityField] === true) {
       amenity.classList.add("checked-amenity");
     }
+  }
+
+  function renderContactInfo(
+    contactField: keyof typeof property.contactInformation
+  ) {
+    const contactSpan = document.getElementById(`contact-${contactField}`);
+
+    if (!contactSpan) {
+      throw new Error(`contact ${contactField} not found`);
+    }
+
+    contactSpan.innerText =
+      property.contactInformation[contactField].toString();
   }
 }
 
