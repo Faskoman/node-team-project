@@ -19,28 +19,57 @@
         <button>user</button>
     </header>
 
-    <main>
-        <article id="property-details">
+    <main class="details-main-flow">
+        <article id="property-details" class="flow">
             <div>
                 <h2 id="property-title"></h2>
-                <span id="property-type"></span>
-                <span id="property-neighborhood"></span>
-                <span id="property-city"></span>
+                <div class="main-details-container">
+                    <span id="property-type"></span>
+                    <span id="property-neighborhood"></span>
+                    <span id="property-city"></span>
+                </div>
             </div>
-            <div>
-                <span id="property-bedrooms"></span>
-                <span id="property-floor"></span>
-                <span id="property-squareMeters"></span>
+            <div class="secondary-details-container flow">
+                <span class="symbol-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="symbols">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" />
+                    </svg>
+                    <span id="property-bedrooms"></span>
+                    <span> Rooms</span>
+                </span>
+
+                <span class="symbol-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="symbols">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                    </svg>
+                    <span id="property-floor"></span>
+                    <span>Floor</span>
+                </span>
+
+                <span class="symbol-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="symbols">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                    </svg>
+                    <span id="property-squareMeters"></span>
+                    <span>m²</span>
+                </span>
             </div>
-            <div>
+            <div class="flow">
+                <h3 id="property-transaction"></h3>
                 <p id="property-description"></p>
             </div>
-            <div id="property-amenities">
+            <div id="property-amenities" class="flow">
                 <h3>What's in the venue?</h3>
                 <ul id="amenities-list">
-                    <li class="checked-amenity" id="property-hasBalcony">Balcony</li>
-                    <li class="checked-amenity" id="property-hasParking">Parking</li>
-                    <li class="checked-amenity" id="property-hasAC">AC</li>
+                    <li id="property-hasBalcony">Balcony</li>
+                    <li id="property-hasParking">Parking</li>
+                    <li id="property-hasAC">AC</li>
                     <li id="property-arePetsAllowed">Pets</li>
                     <li id="property-isSmokingAllowed">Smoking</li>
                     <li id="property-hasElevator">Elevator</li>
