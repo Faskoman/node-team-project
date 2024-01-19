@@ -2,6 +2,8 @@ import { Document, Schema, model } from "mongoose";
 
 type venuType = "Apartment" | "House" | "Loft";
 
+type Transaction = "Lease" | "Purchase";
+
 interface Property extends Document {
   title: string;
   type: venuType;
@@ -10,6 +12,7 @@ interface Property extends Document {
   bedrooms: number;
   floor: number;
   squareMeters: number;
+  transaction: Transaction;
   cost: { monthlyRentInNIS?: number; priceInNIS?: number };
   amenities: {
     hasBalcony: boolean;
@@ -42,6 +45,7 @@ const propertySchema = new Schema<Property>({
   bedrooms: { type: Number, required: true },
   floor: { type: Number, required: true },
   squareMeters: { type: Number, required: true },
+  transaction: { type: String, enum: ["Lease", "Purchase"], required: true, default: "Lease" },
   cost: {
     monthlyRentInNIS: { type: Number },
     priceInNIS: { type: Number },
