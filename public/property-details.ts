@@ -24,6 +24,20 @@ async function app() {
   }
   renderPropertyField("squareMeters");
   renderPropertyField("description");
+  renderAmenity("arePetsAllowed");
+  renderAmenity("hasAC");
+  renderAmenity("hasBalcony");
+  renderAmenity("hasElevator");
+  renderAmenity("hasParking");
+  renderAmenity("isSmokingAllowed");
+
+  const transactionSpan = document.getElementById("property-transaction");
+
+  if (transactionSpan) {
+    property.transaction === "Lease"
+      ? (transactionSpan.innerText = "Available for Lease")
+      : (transactionSpan.innerText = "For Sale");
+  }
 
   function renderPropertyField(field: keyof typeof property) {
     const details = document.getElementById(`property-${field}`);
@@ -33,6 +47,18 @@ async function app() {
     }
 
     details.innerText = property[field]!.toString();
+  }
+
+  function renderAmenity(amenityField: keyof typeof property.amenities) {
+    const amenity = document.getElementById(`property-${amenityField}`);
+
+    if (!amenity) {
+      throw new Error(`Amenity ${amenity} not found`);
+    }
+
+    if (property.amenities[amenityField] === true) {
+      amenity.classList.add("checked-amenity");
+    }
   }
 }
 
