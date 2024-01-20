@@ -28,7 +28,7 @@ async function init() {
   }
 
   await mongoose.connect(process.env.MONGO_CONNECTION_STRING, {
-    dbName: "test",
+    dbName: "app-db-name",
   });
 
   server.listen(port, () =>

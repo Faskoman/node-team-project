@@ -22,18 +22,19 @@
      - render info 🟢
    - Message contact 🔴
 
-3. ### Add a new post - (assaf)
+3. ### Add a new post - (assaf) ✅
 
-   - only users can add
-   - property details
-   - upload pictures
+   - only users can add 🟢
+   - property details 🟢
+   - upload pictures 🟠 url
+   - styling 🔴
 
 4. ### Login / Register ✅
 
-   - If logged allow to add posts 🔴
+   - If logged allow to add posts 🟢
    - redirect 🟢
      - redirect from login/register to index if logged in 🟢
-     - redirect to login/register if trying to add post and not logged 🟠 (just need to change name of href)
+     - redirect to login/register if trying to add post and not logged 🟢 
 
 ## Models
 

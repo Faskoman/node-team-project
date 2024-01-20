@@ -89,8 +89,6 @@ async function app() {
         throw new Error();
       }
 
-      await res.json();
-
       sessionStorage.clear();
       window.location.replace("/");
     } catch (error) {
