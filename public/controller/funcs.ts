@@ -124,3 +124,8 @@ export function newPostLink() {
     window.location.replace("/view/new-post.html");
   });
 }
+
+export function clickSound() {
+  const click = new Audio("../assets/click.wav");
+  click.play();
+}
