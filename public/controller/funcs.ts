@@ -69,6 +69,14 @@ export function toggleDisplay(element: HTMLElement) {
   element.classList.toggle("display-none");
 }
 
+export function hideDisplay(element: HTMLElement) {
+  element.classList.add("display-none");
+}
+
+export function showDisplay(element: HTMLElement) {
+  element.classList.remove("display-none");
+}
+
 export function logout() {
   document.getElementById("logoutBtn")?.addEventListener("click", async () => {
     try {
