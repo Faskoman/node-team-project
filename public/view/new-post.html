@@ -31,7 +31,7 @@
 
     <main class="main-flow flow">
 
-        <form method="post" name="newPost" novalidate>
+        <form method="post" name="newPost">
             <article id="transaction" class="transaction__container __container">
                 <div id="selling-container" class="transaction__button">
                     <input type="radio" name="transaction" id="Purchase">
@@ -108,7 +108,7 @@
                 <label for="availabilityDate">Availability Date:</label>
                 <input type="date" id="availabilityDate" name="availabilityDate">
 
-                <button type="submit">Submit</button>
+                <button method="post" type="submit">Submit</button>
             </article>
         </form>
 

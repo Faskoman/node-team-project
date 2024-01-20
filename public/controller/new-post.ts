@@ -29,6 +29,7 @@ async function app() {
       const formData = new FormData(e.target as HTMLFormElement);
       const priceInNIS = formData.get("priceInNIS");
       const monthlyRentInNIS = formData.get("monthlyRentInNIS");
+
       if (!priceInNIS && !monthlyRentInNIS) {
         throw new Error(
           "Either priceInNIS or monthlyRentInNIS must be provided."
@@ -39,6 +40,7 @@ async function app() {
       ) {
         throw new Error("Cannot be a negative number or 0");
       }
+
       const body = JSON.stringify({
         title: formData.get("title"),
         type: formData.get("type"),
@@ -53,15 +55,19 @@ async function app() {
           priceInNIS: formData.get("priceInNIS"),
         },
         amenities: {
-          hasBalcony: formData.get("hasBalcony") === "true",
-          hasParking: formData.get("hasParking") === "true",
-          hasAC: formData.get("hasAC") === "true",
-          arePetsAllowed: formData.get("arePetsAllowed") === "true",
-          isSmokingAllowed: formData.get("isSmokingAllowed") === "true",
-          hasElevator: formData.get("hasElevator") === "true",
+          hasBalcony: formData.get("hasBalcony") === "on",
+          hasParking: formData.get("hasParking") === "on",
+          hasAC: formData.get("hasAC") === "on",
+          arePetsAllowed: formData.get("arePetsAllowed") === "on",
+          isSmokingAllowed: formData.get("isSmokingAllowed") === "on",
+          hasElevator: formData.get("hasElevator") === "on",
         },
         description: formData.get("description"),
-        images: formData.get("images"),
+        images: formData
+          .get("images")
+          ?.toString()
+          .replaceAll(" ", "")
+          .split(","),
         contactInformation: {
           name: name,
           phone: phone,
@@ -82,6 +88,8 @@ async function app() {
       if (res.status >= 400) {
         throw new Error();
       }
+
+      await res.json();
 
       sessionStorage.clear();
       window.location.replace("/");

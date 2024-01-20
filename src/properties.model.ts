@@ -33,39 +33,39 @@ interface Property extends Document {
 }
 
 const propertySchema = new Schema<Property>({
-  // title: { type: String, required: true },
-  // type: {
-  //   type: String,
-  //   enum: ["Apartment", "House", "Loft"],
-  //   required: true,
-  //   default: "Apartment",
-  // },
-  // neighborhood: { type: String, required: true },
-  // city: { type: String, required: true },
-  // bedrooms: { type: Number, required: true },
-  // floor: { type: Number, required: true },
-  // squareMeters: { type: Number, required: true },
-  // transaction: { type: String, enum: ["Lease", "Purchase"], required: true, },
+  title: { type: String, required: true },
+  type: {
+    type: String,
+    enum: ["Apartment", "House", "Loft"],
+    required: true,
+    default: "Apartment",
+  },
+  neighborhood: { type: String, required: true },
+  city: { type: String, required: true },
+  bedrooms: { type: Number, required: true },
+  floor: { type: Number, required: true },
+  squareMeters: { type: Number, required: true },
+  transaction: { type: String, enum: ["Lease", "Purchase"], required: true, },
   cost: {
     monthlyRentInNIS: { type: Number },
     priceInNIS: { type: Number },
   },
-  // amenities: {
-  //   hasBalcony: { type: Boolean },
-  //   hasParking: { type: Boolean },
-  //   hasAC: { type: Boolean },
-  //   arePetsAllowed: { type: Boolean },
-  //   isSmokingAllowed: { type: Boolean },
-  //   hasElevator: { type: Boolean },
-  // },
-  // description: { type: String, required: true },
-  // images: [{ type: String }],
-  // contactInformation: {
-  //   name: { type: String, required: true },
-  //   phone: { type: String, required: true },
-  //   email: { type: String, required: true },
-  // },
-  // availabilityDate: { type: Date },
+  amenities: {
+    hasBalcony: { type: Boolean },
+    hasParking: { type: Boolean },
+    hasAC: { type: Boolean },
+    arePetsAllowed: { type: Boolean },
+    isSmokingAllowed: { type: Boolean },
+    hasElevator: { type: Boolean },
+  },
+  description: { type: String, required: true },
+  images: [{ type: String, required: true }],
+  contactInformation: {
+    name: { type: String, required: true },
+    phone: { type: String, required: true },
+    email: { type: String, required: true },
+  },
+  availabilityDate: { type: Date },
 });
 
 export const Property = model<Property>(

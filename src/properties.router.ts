@@ -34,36 +34,36 @@ router.get("/:propertyId", async (req, res) => {
 router.post("/new-post", async (req, res, next) => {
   try {
     const {
-      // title,
-      // type,
-      // neighborhood,
-      // city,
-      // bedrooms,
-      // floor,
-      // squareMeters,
-      // transaction,
+      title,
+      type,
+      neighborhood,
+      city,
+      bedrooms,
+      floor,
+      squareMeters,
+      transaction,
       cost,
-      // amenities,
-      // description,
-      // images,
-      // contactInformation,
-      // availabilityDate,
+      amenities,
+      description,
+      images,
+      contactInformation,
+      availabilityDate,
     } = req.body;
 
     if (
-      // !title ||
-      // !type ||
-      // !neighborhood ||
-      // !city ||
-      // !bedrooms ||
-      // !floor ||
-      // !squareMeters ||
-      // !transaction ||
-      !cost 
-      // !amenities ||
-      // !description ||
-      // !images ||
-      // !contactInformation 
+      !title ||
+      !type ||
+      !neighborhood ||
+      !city ||
+      !bedrooms ||
+      !floor ||
+      !squareMeters ||
+      !transaction ||
+      !cost ||
+      !amenities ||
+      !description ||
+      !images ||
+      !contactInformation 
     ) {
       res.status(400);
       res.send("Must provide all fields of the property...");
@@ -71,20 +71,20 @@ router.post("/new-post", async (req, res, next) => {
     }
 
     const property = await Property.create({
-      // title,
-      // type,
-      // neighborhood,
-      // city,
-      // bedrooms,
-      // floor,
-      // squareMeters,
-      // transaction,
+      title,
+      type,
+      neighborhood,
+      city,
+      bedrooms,
+      floor,
+      squareMeters,
+      transaction,
       cost,
-      // amenities,
-      // description,
-      // images,
-      // contactInformation,
-      // availabilityDate,
+      amenities,
+      description,
+      images,
+      contactInformation,
+      availabilityDate,
     });
 
     console.log(property);
