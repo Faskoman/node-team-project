@@ -93,3 +93,12 @@ router.post("/new-post", async (req, res, next) => {
     next(error);
   }
 });
+
+router.get('/view/api/properties', async (req, res) => {
+  try {
+    const items = await Property.find();
+    res.json(items);
+  } catch (error) {
+    res.status(500).send('Internal Server Error');
+  }
+});
