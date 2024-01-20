@@ -132,15 +132,15 @@ async function app() {
   const contactDetailsButton = document.getElementById(
     "contact-details-button"
   ) as HTMLButtonElement;
+  const contactInfo = document.getElementById("contact-info") as HTMLDivElement;
 
   contactDetailsButton.addEventListener("click", () => {
-    toggleDisplay(contactDetailsButton);
-
-    const contactInfo = document.getElementById(
-      "contact-info"
-    ) as HTMLDivElement;
-
-    toggleDisplay(contactInfo);
+    contactDetailsButton.classList.add("fade-out");
+    setTimeout(() => {
+      toggleDisplay(contactDetailsButton);
+      contactInfo.classList.add("fade-in");
+      toggleDisplay(contactInfo);
+    }, 300);
   });
 }
 

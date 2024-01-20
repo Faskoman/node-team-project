@@ -129,7 +129,7 @@
     transition: all 200ms ease;
 
     &:hover {
-        animation: shake 5s ease 0s infinite normal forwards;
+        background-color: $dark-secondary;
     }
 }
 
@@ -178,4 +178,12 @@
 
 .symbol-container {
     margin-right: 10px;
+}
+
+.fade-in {
+    animation: fade 300ms ease 1 normal forwards;
+}
+
+.fade-out {
+    animation: fade 300ms ease 1 reverse forwards;
 }
