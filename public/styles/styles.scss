@@ -19,6 +19,7 @@ html {
     box-shadow: 0px 7px 12px -4px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     &__link {
         text-decoration: none;
@@ -44,6 +45,11 @@ select {
 ul,
 li {
     list-style: none;
+}
+
+.main-flow {
+    width: min(85ch, 100% - 2rem);
+    margin-inline: auto;
 }
 
 .flow {
