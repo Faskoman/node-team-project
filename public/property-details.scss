@@ -74,7 +74,7 @@
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto;
     line-height: 1.5rem;
-    
+
     &>* {
         opacity: .2;
         margin: 1ch 1ch 0 0;
@@ -87,7 +87,6 @@
 
 .checked-amenity {
     opacity: 1;
-    font-weight: 600;
 }
 
 .main-details-container {
@@ -144,8 +143,6 @@
     color: $text;
 }
 
-
-
 .secondary-details-container {
     border: 1px solid rgba(0, 0, 0, 0.2);
     font-size: calc(.5rem + 0.5vw);
@@ -157,6 +154,7 @@
 
 #property-amenities {
     margin-block-end: 1.2rem;
+    font-weight: 700;
 }
 
 #property-description-container,
