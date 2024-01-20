@@ -1,9 +1,6 @@
 @import 'colors';
 @import 'animations';
 
-$marked: #363636;
-$unmarked: #CCCCCC;
-
 .details-main-flow {
     width: min(85ch, 100% - 2rem);
     margin-inline: auto;
@@ -70,19 +67,26 @@ $unmarked: #CCCCCC;
     width: fit-content;
 }
 
-#amenities-list {
-    color: $unmarked;
+.amenities-list {
     font-size: smaller;
     padding: 0;
-
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    line-height: 1.5rem;
+    
     &>* {
+        opacity: .2;
         margin: 1ch 1ch 0 0;
         width: fit-content;
+        display: flex;
+        align-items: center;
+        gap: .5em;
     }
 }
 
 .checked-amenity {
-    color: $marked;
+    opacity: 1;
     font-weight: 600;
 }
 
@@ -103,7 +107,7 @@ $unmarked: #CCCCCC;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0px 0px 14px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 14px 4px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
 }
 
@@ -132,6 +136,8 @@ $unmarked: #CCCCCC;
 #property-cost::after {
     content: "₪";
     margin-inline-start: .5ch;
+    font-weight: 800;
+    font-size: larger;
 }
 
 #contact-info {
