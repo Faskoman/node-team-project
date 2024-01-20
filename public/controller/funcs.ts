@@ -60,6 +60,10 @@ export async function getCurrentUser() {
   return user;
 }
 
+export function toggleDisplay(element: HTMLElement) {
+  element.classList.toggle("display-none");
+}
+
 export function logout() {
   document.getElementById("logoutBtn")?.addEventListener("click", async () => {
     try {
@@ -95,8 +99,4 @@ export function addNumberSuffix(number: number): string {
       ? suffixes[3]
       : suffixes[0])
   );
-}
-
-export function toggleDisplay(element: HTMLElement) {
-  element.classList.toggle("display-none");
 }

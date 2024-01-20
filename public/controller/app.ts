@@ -1,9 +1,10 @@
-import { getJSON, handleUser, logout } from "./funcs.js";
+import { getCurrentUser, handleUser, logout } from "./funcs.js";
 
 async function app() {
-  const user = await getJSON("/api/auth/currentUser");
+  const user = await getCurrentUser();
 
   handleUser(user);
+
   logout();
 }
 
