@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/user-menu.css">
     <title>rentMe</title>
 </head>
 
@@ -16,8 +16,15 @@
 
     <button>liked properties</button>
     <button>➕ new post</button>
-    <!-- <button id="logoutBtn">Logout</button> -->
-    <button><span id="username">Guest</span></button>
+    <details id="user-menu" class="user-menu">
+        <summary class="user-menu__summary">
+          <img id="user-menu-avatar" src="https://avatars.githubusercontent.com/u/105358860?v=4" alt="avatar picture" class="user-menu__picture" />
+        </summary>
+        <ul class="user-menu__pop-up-list">
+          <li id="username">Guest</li>
+          <li><button id="logoutBtn" class="flow">Logout</button></li>
+        </ul>
+      </details>
 
     </header>
     <main>

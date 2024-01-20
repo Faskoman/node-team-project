@@ -1,4 +1,5 @@
-@import 'colors'; 
+@import 'colors';
+
 *,
 *::before,
 *::after {
@@ -35,7 +36,8 @@ select {
     line-height: inherit;
 }
 
-ul, li {
+ul,
+li {
     list-style: none;
 }
 
@@ -63,4 +65,47 @@ ul, li {
 
 .display-none {
     display: none;
+}
+
+
+.user-menu {
+    position: relative;
+    margin-inline-end: .2em;
+    margin-block-start: .2em;
+
+    &__picture {
+        border-radius: 50%;
+        border: 4px double $text;
+        width: min(10vw, 75px);
+    }
+
+    &__summary {
+        list-style: none;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    &__pop-up-list {
+        position: absolute;
+        text-align: center;
+        background: $primary;
+        border: 2px solid $text;
+        color: $text;
+        border-radius: 8px;
+        padding: 1rem;
+        right: 1vw;
+        top: calc(100% + 0.5rem);
+        width: calc(10ch + 5vw);
+        z-index: 1;
+
+        &__item {
+            list-style: none;
+        }
+    }
+}
+
+#logoutBtn {
+    cursor: pointer;
+    background-color: transparent;
+    border-color: transparent;
 }

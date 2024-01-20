@@ -43,6 +43,11 @@ export function handleUser(user: any) {
   const userDiv = document.getElementById("username");
 
   if (!user) {
+    const userMenu = document.getElementById("user-menu");
+
+    if (userMenu) {
+      toggleDisplay(userMenu);
+    }
     return;
   }
 
@@ -99,4 +104,19 @@ export function addNumberSuffix(number: number): string {
       ? suffixes[3]
       : suffixes[0])
   );
+}
+
+export function manageLoginBtn(user: object) {
+  if (!user) {
+    const header = document.querySelector(
+      ".site-header"
+    ) as HTMLHeadingElement;
+    const loginBtn = document.createElement("button");
+    loginBtn.id = "loginBtn";
+    loginBtn.innerText = "Login";
+    loginBtn.addEventListener("click", () => {
+      window.location.replace("/view/login.html");
+    });
+    header.append(loginBtn);
+  }
 }
