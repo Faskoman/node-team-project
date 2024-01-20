@@ -1,4 +1,10 @@
-import { getCurrentUser, handleUser, logout, redirect } from "./funcs.js";
+import {
+  clickSound,
+  getCurrentUser,
+  handleUser,
+  logout,
+  redirect,
+} from "./funcs.js";
 
 async function app() {
   const user = await getCurrentUser();
@@ -9,3 +15,11 @@ async function app() {
 }
 
 app();
+
+const labels = document.querySelectorAll("label");
+
+labels.forEach((label) => {
+  label.addEventListener("click", () => {
+    clickSound();
+  });
+});
