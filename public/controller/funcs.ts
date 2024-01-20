@@ -41,8 +41,14 @@ function isEntryPage(location: string): boolean {
 
 export function handleUser(user: any) {
   const userDiv = document.getElementById("username");
+  manageLoginBtn(user);
 
   if (!user) {
+    const userMenu = document.getElementById("user-menu");
+
+    if (userMenu) {
+      toggleDisplay(userMenu);
+    }
     return;
   }
 
@@ -58,6 +64,10 @@ export function handleUser(user: any) {
 export async function getCurrentUser() {
   const user = await getJSON("/api/auth/currentUser");
   return user;
+}
+
+export function toggleDisplay(element: HTMLElement) {
+  element.classList.toggle("display-none");
 }
 
 export function logout() {
@@ -97,6 +107,15 @@ export function addNumberSuffix(number: number): string {
   );
 }
 
-export function toggleDisplay(element: HTMLElement) {
-  element.classList.toggle("display-none");
+function manageLoginBtn(user: object) {
+  if (!user) {
+    const header = document.querySelector(".site-header") as HTMLHeadingElement;
+    const loginBtn = document.createElement("button");
+    loginBtn.id = "loginBtn";
+    loginBtn.innerText = "Login";
+    loginBtn.addEventListener("click", () => {
+      window.location.replace("/view/login.html");
+    });
+    header.append(loginBtn);
+  }
 }

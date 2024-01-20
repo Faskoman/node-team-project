@@ -11,12 +11,21 @@
 
 <body>
     <header class="site-header">
-        <h1><a class="site-header__title" href="../index.html">rentMe</a></h1>
+        <h1>rentMe</h1>
 
         <button>liked properties</button>
         <button>➕ new post</button>
-        <button id="logoutBtn">Logout</button>
-        <button>user</button>
+        <details id="user-menu" class="user-menu">
+            <summary class="user-menu__summary">
+                <img id="user-menu-avatar" src="https://avatars.githubusercontent.com/u/105358860?v=4"
+                    alt="avatar picture" class="user-menu__picture" />
+            </summary>
+            <ul class="user-menu__pop-up-list">
+                <li id="username">Guest</li>
+                <li><button id="logoutBtn" class="flow">Logout</button></li>
+            </ul>
+        </details>
+
     </header>
 
     <main class="details-main-flow flow">

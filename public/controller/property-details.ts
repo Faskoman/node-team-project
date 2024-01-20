@@ -1,7 +1,7 @@
 import { getPropertyDetails } from "./Property.js";
 import {
   addNumberSuffix,
-  getJSON,
+  getCurrentUser,
   handleUser,
   logout,
   toggleDisplay,
@@ -9,7 +9,7 @@ import {
 
 async function app() {
   const [user, property] = await Promise.all([
-    getJSON("/api/auth/currentUser"),
+    getCurrentUser(),
     getPropertyDetails(window.location.hash.slice(1)),
   ]);
 
