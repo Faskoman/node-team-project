@@ -134,9 +134,9 @@
 
 #property-cost::after {
     content: "₪";
-    margin-inline-start: .5ch;
     font-weight: 800;
     font-size: larger;
+    transform: translateY(-10%);
 }
 
 #contact-info {

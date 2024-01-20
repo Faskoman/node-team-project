@@ -23,11 +23,17 @@ document.forms.namedItem("login")?.addEventListener("submit", async (e) => {
       throw new Error(await res.text());
     }
 
-    window.location.replace("/");
+    const lastPage =
+      document.referrer +
+      sessionStorage.getItem("lastViewed")?.replaceAll(`"`, "");
+
+    lastPage.includes("property-details")
+      ? window.location.replace(lastPage)
+      : window.location.replace("/");
   } catch (err) {
     console.error(err);
   }
 });
 
 togglePassword("login");
-redirect()
+redirect();
