@@ -1,14 +1,17 @@
 @import 'colors';
 
-.transaction-type {
+.__container {
+    background-color: $tertiary;
+    border-radius: 16px;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.transaction {
 
     &__container {
         display: flex;
         justify-content: space-evenly;
-        background-color: $tertiary;
-        border-radius: 16px;
-        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
-        padding: 1rem;
     }
 
     &__button {
@@ -26,7 +29,7 @@
         & input {
             display: none;
 
-            &:checked+.transaction-type__label {
+            &:checked+.transaction__label {
                 transition: all 200ms ease;
                 background-color: $secondary;
                 color: $tertiary;
@@ -42,4 +45,4 @@
         height: 100%;
         cursor: pointer;
     }
-}
+} 
