@@ -1,5 +1,11 @@
 import { getPropertyDetails } from "./Property.js";
-import { addNumberSuffix, getJSON, handleUser, logout } from "./funcs.js";
+import {
+  addNumberSuffix,
+  getJSON,
+  handleUser,
+  logout,
+  toggleDisplay,
+} from "./funcs.js";
 
 async function app() {
   const [user, property] = await Promise.all([
@@ -122,6 +128,20 @@ async function app() {
       picturesContainer.appendChild(pictureElement);
     }
   }
+
+  const contactDetailsButton = document.getElementById(
+    "contact-details-button"
+  ) as HTMLButtonElement;
+
+  contactDetailsButton.addEventListener("click", () => {
+    toggleDisplay(contactDetailsButton);
+
+    const contactInfo = document.getElementById(
+      "contact-info"
+    ) as HTMLDivElement;
+
+    toggleDisplay(contactInfo);
+  });
 }
 
 app();

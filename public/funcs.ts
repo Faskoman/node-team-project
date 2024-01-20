@@ -96,3 +96,7 @@ export function addNumberSuffix(number: number): string {
       : suffixes[0])
   );
 }
+
+export function toggleDisplay(element: HTMLElement) {
+  element.classList.toggle("display-none");
+}
