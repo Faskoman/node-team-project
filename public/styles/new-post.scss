@@ -1,0 +1,43 @@
+@import 'colors';
+
+.transaction-type {
+
+    &__container {
+        display: flex;
+        justify-content: space-evenly;
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+    }
+
+    &__button {
+        aspect-ratio: 1;
+        height: calc(7ch + 10vw);
+        border: 1px solid $text;
+        border-radius: 6px;
+        box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            color: $primary;
+            border-color: $primary;
+        }
+
+        & input {
+            display: none;
+
+            &:checked+.transaction-type__label {
+                transition: all 200ms ease;
+                background-color: $secondary;
+                color: $dark-text;
+            }
+        }
+    }
+
+    &__label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+}

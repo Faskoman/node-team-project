@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rentMe</title>
     <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/new-post.css">
 </head>
 
 <body>
@@ -13,7 +14,7 @@
         <a href="/" class="site-header__link">
             <h1>rentMe</h1>
         </a>
-
+        <span>New post</span>
         <button>liked properties</button>
         <details id="user-menu" class="user-menu">
             <summary class="user-menu__summary">
@@ -25,8 +26,24 @@
                 <li><button id="logoutBtn" class="flow">Logout</button></li>
             </ul>
         </details>
-
     </header>
+
+    <main class="main-flow flow">
+
+        <form method="post" name="newPost">
+            <article id="transaction-type" class="transaction-type__container">
+                <div id="selling-container" class="transaction-type__button">
+                    <input type="radio" name="transaction-type" id="selling" checked>
+                    <label for="selling" class="transaction-type__label">For Sale</label>
+                </div>
+                <div id="leasing-container" class="transaction-type__button">
+                    <input type="radio" name="transaction-type" id="leasing">
+                    <label for="leasing" class="transaction-type__label">For Rent</label>
+                </div>
+            </article>
+        </form>
+
+    </main>
 
     <script type="module" src="../controller/new-post.js"></script>
 </body>

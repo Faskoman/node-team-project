@@ -1,11 +1,6 @@
 @import 'colors';
 @import 'animations';
 
-.details-main-flow {
-    width: min(85ch, 100% - 2rem);
-    margin-inline: auto;
-}
-
 #property-pictures {
     display: grid;
     grid-template-columns: 2fr .7vw 1fr;
