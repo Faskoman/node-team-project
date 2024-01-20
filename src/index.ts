@@ -17,7 +17,7 @@ app.use(json());
 app.use(express.static("public"));
 
 app.use("/api/auth", authRouter);
-app.use("/api/properties", propertyRouter);
+app.use("/view/api/properties", propertyRouter);
 
 const server = createServer(app);
 const port = process.env.PORT ?? 3000;
