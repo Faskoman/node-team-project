@@ -1,4 +1,4 @@
-import { getJSON, handleUser, logout } from "./funcs.js";
+import { getJSON, handleUser, logout } from "../controler/funcs.js";
 
 async function app() {
   const user = await getJSON("/api/auth/currentUser");

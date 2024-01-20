@@ -21,7 +21,7 @@ export async function redirect() {
 
     if (!user && window.location.href.includes("newPost.html")) {
       // update when creating add post form
-      window.location.replace("/login.html");
+      window.location.replace("/view/login.html");
     } else if (user && isEntryPage(currentWindowLocation)) {
       window.location.replace("/");
     }
