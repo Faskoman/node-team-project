@@ -41,6 +41,7 @@ function isEntryPage(location: string): boolean {
 
 export function handleUser(user: any) {
   const userDiv = document.getElementById("username");
+  manageLoginBtn(user);
 
   if (!user) {
     const userMenu = document.getElementById("user-menu");
@@ -106,11 +107,9 @@ export function addNumberSuffix(number: number): string {
   );
 }
 
-export function manageLoginBtn(user: object) {
+function manageLoginBtn(user: object) {
   if (!user) {
-    const header = document.querySelector(
-      ".site-header"
-    ) as HTMLHeadingElement;
+    const header = document.querySelector(".site-header") as HTMLHeadingElement;
     const loginBtn = document.createElement("button");
     loginBtn.id = "loginBtn";
     loginBtn.innerText = "Login";
