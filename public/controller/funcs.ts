@@ -19,8 +19,7 @@ export async function redirect() {
     const user = await getJSON("/api/auth/currentUser");
     const currentWindowLocation = window.location.href;
 
-    if (!user && window.location.href.includes("newPost.html")) {
-      // update when creating add post form
+    if (!user && window.location.href.includes("new-post.html")) {
       window.location.replace("/view/login.html");
     } else if (user && isEntryPage(currentWindowLocation)) {
       window.location.replace("/");
@@ -118,4 +117,10 @@ function manageLoginBtn(user: object) {
     });
     header.append(loginBtn);
   }
+}
+
+export function newPostLink() {
+  document.getElementById("new-post-btn")?.addEventListener("click", () => {
+    window.location.replace("/view/new-post.html");
+  });
 }

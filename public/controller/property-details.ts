@@ -4,6 +4,7 @@ import {
   getCurrentUser,
   handleUser,
   logout,
+  newPostLink,
   toggleDisplay,
 } from "./funcs.js";
 
@@ -13,12 +14,13 @@ async function app() {
     getPropertyDetails(window.location.hash.slice(1)),
   ]);
 
-  sessionStorage.setItem('lastViewed', JSON.stringify(window.location.hash));
+  sessionStorage.setItem("lastViewed", JSON.stringify(window.location.hash));
 
   console.log(user, property);
 
   handleUser(user);
   logout();
+  newPostLink();
 
   renderPictures();
   renderPropertyField("title");
