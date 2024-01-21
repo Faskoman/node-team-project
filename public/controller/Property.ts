@@ -47,7 +47,7 @@ export async function getProperties() {
   return properties;
 }
 
-export type PropertyListResult = Pick<Property, "_id" | "title"| "city" | "floor"| "neighborhood" | "bedrooms" >[];
+export type PropertyListResult = Pick<Property, "_id" | "title" | "city" | "floor" | "neighborhood" | "bedrooms" >[];
 
 export async function renderListItem(properties: PropertyListResult) {
   const gridBoard = document.getElementById("gridboard");
