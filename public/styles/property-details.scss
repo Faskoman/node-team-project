@@ -15,6 +15,11 @@
     max-height: 500px;
 }
 
+.property-picture-2,
+.property-picture-3 {
+    max-height: calc(250px - .7vw);
+}
+
 .property-picture-1 {
     border-radius: 16px 0 0 16px;
     grid-column: 1 / 2;
@@ -34,6 +39,7 @@
 .only-two-pictures {
     grid-row: 1 / 4;
     border-radius: 0 16px 16px 0;
+    max-height: 500px;
 }
 
 .property-picture-3 {
