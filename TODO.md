@@ -7,8 +7,8 @@
 1. ### Home (list) --- (itzhak)
 
    - Header (brand name + user + liked properties + add new post button) 🟠
-   - search bar (by catrgories)
-   - List (from newest to oldest)
+   - search bar (by catrgories) 
+   - List 🟠 - add aditional items and style + (from newest to oldest) 
 
 2. ### Property details ✅
 
@@ -26,6 +26,7 @@
 
    - only users can add 🟢
    - property details 🟢
+   - add posted date 🔴
    - upload pictures 🟠 url
    - styling 🔴
 
