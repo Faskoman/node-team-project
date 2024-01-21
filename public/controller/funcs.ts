@@ -137,3 +137,4 @@ export function clickSound() {
   const click = new Audio("../assets/click.wav");
   click.play();
 }
+
