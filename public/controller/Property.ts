@@ -1,8 +1,11 @@
+import { getJSON } from "./funcs";
+
 type venuType = "Apartment" | "House" | "Loft";
 
 type Transaction = "Lease" | "Purchase";
 
 type Property = {
+  _id: string;
   title: string;
   type: venuType;
   neighborhood: string;
@@ -38,25 +41,20 @@ export async function getPropertyDetails(
   return res.json();
 }
 
-export async function getGridItems() {
-  document.addEventListener("DOMContentLoaded", async () => {
-    const gridBoard = document.getElementById("grid-board");
+export async function getProperties() {
+  const res = await fetch("/view/api/properties");
+  const properties = await res.json();
+  return properties;
+}
 
-    if (!gridBoard) {
-      throw new Error("grid element not in page");
-    }
+export type PropertyListResult = Pick<Property, "_id" | "title"| "city" | "floor"| "neighborhood" | "bedrooms" >[];
 
-    try {
-        const res = await fetch("/view/api/properties");
-        const properties = await res.json();
-
-    if (!properties) {
-        throw new Error("properties is not found");
-    }
+export async function renderListItem(properties: PropertyListResult) {
+  const gridBoard = document.getElementById("gridboard");
+  if (!gridBoard) {
+    throw new Error("grid element not in page");
+  }
   
-        gridBoard.innerHTML = properties.map((property) =>`<li class="grid-item"><a href="property-details.html#${property._id}"</a></li>`).join("\n");
-    } catch (error){
-        console.log(error)
-    }
-})};
-
+    gridBoard.innerHTML = properties.map((property) =>`<li class="grid-item"><a href="/view/property-details.html#${property._id}">${property.title}, ${property.floor}, ${property.city}, ${property.neighborhood},  ${property.bedrooms} </a></li>`).join("\n");
+    
+};

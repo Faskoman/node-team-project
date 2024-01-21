@@ -29,11 +29,25 @@
     </header>
     <main>
         <article class="filters-article">
-            <!-- add filters... -->
+            <form name="filters">
+                <!-- add filters... -->
+                <select name="transaction" id="transaction">
+                    <option value="Lease" selected>for rent</option><!-- rent or buy  -->
+                    <option value="Purchase">for sale</option>
+                </select>
+
+                <label for=""></label>
+                <input type="text"><!--  -->
+                                        
+                <label for=""></label>
+                <input type="text">
+ 
+            </form>
         </article>
 
-        <ul class="grid-board" id="grid-board">
+        <ul class="grid-board" id="gridboard">
             <li class="grid-item"></li>
+            
         </ul>
     </main>
 

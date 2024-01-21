@@ -94,7 +94,7 @@ router.post("/new-post", async (req, res, next) => {
   }
 });
 
-router.get('/view/api/properties', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const items = await Property.find();
     res.json(items);
