@@ -10,7 +10,7 @@ expires.setDate(now.getDate() + 1);
 
 router.post("/register", async (req, res, next) => {
   try {
-    const { email, username, phone, password } = req.body;
+    const { email, username, phone, password, messages } = req.body;
 
     if (!email || !username || !password || !phone) {
       res.status(400);
@@ -23,6 +23,7 @@ router.post("/register", async (req, res, next) => {
       username,
       phone,
       password,
+      messages
     });
 
     res.cookie(sessionCookieName, user._id, {

@@ -5,6 +5,7 @@ async function app() {
   const user = await getCurrentUser();
   const properties = await getProperties();
 
+  console.log(user)
   renderListItem(properties);
   handleUser(user);
   logout();
