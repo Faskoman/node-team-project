@@ -2,7 +2,7 @@ import { Document, Schema, Types, model } from "mongoose";
 
 interface Message extends Document {
   creationDate: Date;
-  author: Types.ObjectId;
+  author: { id: Types.ObjectId; name: string };
   recipient: Types.ObjectId;
   content: string;
   wasRead: Boolean;
@@ -10,7 +10,10 @@ interface Message extends Document {
 
 const messagesSchema = new Schema<Message>({
   creationDate: { type: Schema.Types.Date, default: () => new Date() },
-  author: { type: Schema.Types.ObjectId, ref: "User" },
+  author: {
+    id: { type: Schema.Types.ObjectId, ref: "User" },
+    name: { type: String },
+  },
   recipient: { type: Schema.Types.ObjectId, ref: "User" },
   content: String,
   wasRead: Boolean,
