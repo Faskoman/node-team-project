@@ -28,7 +28,7 @@
       </details>
 
     </header>
-    <main>
+    <main class="main">
         <article class="filters-article">
             <form name="filters">
                 <!-- add filters... -->
@@ -50,6 +50,7 @@
 
         <ul class="grid-board" id="gridboard">
             <li class="grid-item"></li>
+            <li class="grid-item"><a href="/view/property-details.html#${property._id}">${property.title}, <img src="${}" alt=""> ${property.city}, ${property.neighborhood},  <div class="item-info">${property.floor},  ${property.bedrooms}, ${squareMeters} </div></a></li>
         </ul>
     </main>
 
