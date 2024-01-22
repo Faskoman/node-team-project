@@ -19,7 +19,7 @@ app.use(json());
 app.use(express.static("public"));
 
 app.use("/api/auth", authRouter);
-app.use("/api/auth", usersRouter);
+app.use("/api/users", usersRouter);
 app.use("/view/api/properties", propertyRouter);
 app.use("/view/api/messages", messagesRouter);
 

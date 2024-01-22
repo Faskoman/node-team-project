@@ -21,6 +21,8 @@ router.get("/currentUser", async (req, res, next) => {
     res.send("logged-out");
   });
   
+
+  
   async function getUser(userId?: string) {
     if (!userId) {
       return null;

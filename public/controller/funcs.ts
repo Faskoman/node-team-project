@@ -16,7 +16,7 @@ export function togglePassword(formName: string): void {
 
 export async function redirect() {
   try {
-    const user = await getJSON("/api/auth/currentUser");
+    const user = await getJSON("/api/users/currentUser");
     const currentWindowLocation = window.location.href;
 
     if (!user && window.location.href.includes("new-post.html")) {
@@ -61,7 +61,7 @@ export function handleUser(user: any) {
 }
 
 export async function getCurrentUser() {
-  const user = await getJSON("/api/auth/currentUser");
+  const user = await getJSON("/api/users/currentUser");
   return user;
 }
 
@@ -80,13 +80,13 @@ export function showDisplay(element: HTMLElement) {
 export function logout() {
   document.getElementById("logoutBtn")?.addEventListener("click", async () => {
     try {
-      await fetch("/api/auth/logout", {
+      await fetch("/api/users/logout", {
         method: "GET",
         credentials: "same-origin",
       });
 
       new Promise<void>((resolve) => {
-        window.location.href = "/api/auth/logout";
+        window.location.href = "/api/users/logout";
         resolve();
       }).then(() => {
         window.location.reload();
