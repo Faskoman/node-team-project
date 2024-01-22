@@ -146,3 +146,19 @@ export function formatDate(dateString: Date) {
 export function resetInputValue(input: string) {
   (document.getElementById(input) as HTMLInputElement).value = "";
 }
+
+export function changeModes() {
+  const darkmode = document.getElementById("color");
+
+  if (!darkmode) {
+    return;
+  }
+
+  document.body.classList.toggle("darkmode");
+
+  if (document.body.classList.contains("darkmode")) {
+    darkmode.textContent = "☀️";
+  } else {
+    darkmode.textContent = "🌙";
+  }
+}
