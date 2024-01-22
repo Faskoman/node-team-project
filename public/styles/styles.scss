@@ -99,6 +99,11 @@ li {
         border-radius: 50%;
         border: 4px double $text;
         width: min(10vw, 75px);
+        transition: all 200ms ease;
+
+        &:hover {
+            scale: 1.05;
+        }
     }
 
     &__summary {
@@ -148,5 +153,21 @@ li {
 
     &:hover {
         text-decoration: underline;
+    }
+}
+
+#new-post-btn {
+    background-color: transparent;
+    border: none;
+    border-bottom: 4px solid transparent;
+    cursor: pointer;
+    font-weight: 500;
+    padding-inline: 1ch;
+    line-height: calc(3.5rem + 0.5vw);
+    transition: all 200ms ease;
+
+    &:hover {
+        border-bottom: 4px solid black;
+        background-color: rgba(0, 0, 0, 0.05);
     }
 }
