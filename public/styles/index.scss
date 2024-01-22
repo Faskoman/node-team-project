@@ -1,6 +1,60 @@
 @import 'colors';
 
-.grid-item {
-    text-transform: capitalize;
+.main {
+    margin-top: var(--margin-top, 1em);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.filters-article {
+    height: 9rem;
+    aspect-ratio: 2;
+    box-shadow: 3px -1px 19px 1px rgba(0,0,0,0.53);
+    
+    
+}
+
+.grid-board {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.grid-item {
+    background-color: rgb(205, 187, 157);
+    text-transform: capitalize;
+    background-color: #EDDF87;
+    height: auto;
+    width: 35rem;
+    border: 1px solid transparent;
+    
+    &:hover {
+        border: 1px solid black;
+    }
+
+    &__img {
+        width: 6rem;
+        aspect-ratio: 1;
+    }
+
+    &__link {
+        display: grid;
+        grid-template-columns:repeat(4, 1fr);
+    
+
+        &>* {
+            color: $text;
+        }
+    }
+
+}
+
+.item-info {
+    display: flex;
+    justify-content: space-between;
+}
+
 

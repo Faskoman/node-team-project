@@ -48,6 +48,10 @@ select {
     font-family: inherit;
     line-height: inherit;
 }
+a {
+    text-decoration: none;
+    color: $text;
+}
 
 ul,
 li {
