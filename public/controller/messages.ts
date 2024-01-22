@@ -1,7 +1,5 @@
 import { getCurrentUser, getJSON, handleUser, logout } from "./funcs.js";
 
-console.log("connected");
-
 async function app() {
   const [user, messages] = await Promise.all([
     await getCurrentUser(),
