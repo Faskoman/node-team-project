@@ -45,7 +45,6 @@
 }
 
 .grid-item {
-    background-color: rgb(205, 187, 157);
     text-transform: capitalize;
     background-color: $tertiary;
     height: auto;
@@ -76,13 +75,6 @@
     &__link {
         display: grid;
         grid-template-columns: auto 1fr 1fr 1fr;
-
-        &::before {
-            
-        }
-        &::after {
-
-        }
 
         &>* {
             color: $text;
