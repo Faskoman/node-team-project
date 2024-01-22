@@ -57,8 +57,8 @@ export async function renderListItem(properties: PropertyListResult) {
     <li class="grid-item">
       <a class="grid-item__link" href="/view/property-details.html#${property._id}">
         <img class="grid-item__img" src="${property.images[0]}" alt="">
-        <div class="grid-item__title">${property.title}, ${property.city}, ${property.neighborhood},</div>
-        <div class="grid-item__info">${property.floor}, rooms:${property.bedrooms}, m²:${property.squareMeters}</div>
+        <div class="grid-item__title"><div>${property.title}</div><div> ${property.city}</div> <div>${property.neighborhood}</div></div>
+        <div class="grid-item__info"><div>floor: ${property.floor}</div> <div>rooms: ${property.bedrooms}</div><div>m²:${property.squareMeters}</div></div>
         <div class="grid-item__price" id="item-price-${property._id}"></div>
       </a>
     </li>`).join("\n");
@@ -67,7 +67,7 @@ export async function renderListItem(properties: PropertyListResult) {
     properties.forEach((property) => {
       const checkedPrice = property.transaction === "Lease"
         ? `${property.cost.monthlyRentInNIS} per month`
-        : `${property.cost.priceInNIS} Purchase price`;
+        : `Purchase price: ${property.cost.priceInNIS} ₪`;
 
       const itemPrice = document.getElementById(`item-price-${property._id}`);
       if (itemPrice) {

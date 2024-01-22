@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { Property } from "./properties.model";
+import { error } from "console";
 
 export const router = Router();
 
@@ -63,7 +64,7 @@ router.post("/new-post", async (req, res, next) => {
       !amenities ||
       !description ||
       !images ||
-      !contactInformation 
+      !contactInformation
     ) {
       res.status(400);
       res.send("Must provide all fields of the property...");
@@ -94,29 +95,35 @@ router.post("/new-post", async (req, res, next) => {
   }
 });
 
-router.get('/', async (_, res) => {
+router.get("/", async (_, res) => {
   try {
     const items = await Property.find();
     res.json(items);
   } catch (error) {
-    res.status(500).send('Internal Server Error');
+    res.status(500).send("Internal Server Error");
   }
 });
 
 router.get("/", async (req, res, next) => {
   try {
-      const search = req.query.search?.toString() ?? ".*";
-      const escapedSearch = search.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      const searchPattern = new RegExp(escapedSearch, "i");
-      const property = await Property.find(
-          { $or: [{ title: searchPattern }, { city: searchPattern }, { neighborhood: searchPattern }] },
-          { title: true, city: true, neighborhood: true }
-      );
+    const search = req.query.search?.toString() ?? ".*";
+    const escapedSearch = search.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const searchPattern = new RegExp(escapedSearch, "i");
+    const property = await Property.find(
+      {
+        $or: [
+          { title: searchPattern },
+          { city: searchPattern },
+          { neighborhood: searchPattern },
+        ],
+      },
+      { title: true, city: true, neighborhood: true }
+    );
 
-      res.send(property);
+    res.send(property);
   } catch (err) {
-      console.error("Error fetching properties:", err);
-      res.status(500).send({ error: "Internal Server Error" });
-      next(err);
+    console.log(error)
+    res.status(500).send("server error" );
+    next(err);
   }
 });
