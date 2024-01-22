@@ -21,6 +21,7 @@ async function app() {
   handleUser(user);
   logout();
   newPostLink();
+  openMessageArea();
 
   renderPictures();
   renderPropertyField("title");
@@ -102,6 +103,18 @@ async function app() {
 
     contactSpan.innerText =
       property.contactInformation[contactField].toString();
+  }
+
+  function openMessageArea() {
+    const messageTextForm = document.getElementById(
+      "message-contact"
+    ) as HTMLFormElement;
+    if (!messageTextForm) {
+      throw new Error("Couldnt find message form");
+    }
+    document.getElementById("contact-name")?.addEventListener("click", () => {
+      toggleDisplay(messageTextForm);
+    });
   }
 
   function renderPictures() {

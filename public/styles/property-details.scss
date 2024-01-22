@@ -106,7 +106,8 @@
 
 #contact-section {
     grid-column: 3 / 4;
-    grid-row: 1 / 3;
+    grid-row: 1 / 4;
+    height: fit-content;
     padding: 1rem;
     display: flex;
     flex-direction: column;
