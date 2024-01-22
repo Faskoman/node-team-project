@@ -1,4 +1,4 @@
-import { getProperties, renderListItem } from "./Property.js";
+import { getProperties, getproperty, renderListItem } from "./Property.js";
 import { getCurrentUser, handleUser, logout, newPostLink } from "./funcs.js";
 
 async function app() {
@@ -12,5 +12,14 @@ async function app() {
   logout();
   newPostLink();
 }
+
+document.forms.namedItem("filters")?.addEventListener("submit", async (e) => {
+  //e.preventDefault();
+
+  const formData = new FormData(e.target);
+  const property = await getproperty(formData.get("search")?.toString());
+
+  renderListItem(property);
+});
 
 app();
