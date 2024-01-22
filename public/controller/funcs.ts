@@ -142,3 +142,7 @@ export function formatDate(dateString: Date) {
   const formattedDate = new Date(dateString).toLocaleDateString();
   return formattedDate;
 }
+
+export function resetInputValue(input: string) {
+  (document.getElementById(input) as HTMLInputElement).value = "";
+}

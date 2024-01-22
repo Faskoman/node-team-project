@@ -5,6 +5,7 @@ import {
   handleUser,
   logout,
   newPostLink,
+  resetInputValue,
   toggleDisplay,
 } from "./funcs.js";
 
