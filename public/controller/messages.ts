@@ -1,4 +1,4 @@
-import { getCurrentUser, getJSON, handleUser, logout } from "./funcs.js";
+import { getCurrentUser, getJSON, handleUser, logout, newPostLink } from "./funcs.js";
 
 async function app() {
   const [user, messages] = await Promise.all([
@@ -10,6 +10,7 @@ async function app() {
 
   handleUser(user);
   logout();
+  newPostLink();
 }
 
 app();
