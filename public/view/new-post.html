@@ -1,137 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../assets/favicon-32x32.png"
-    />
-    <link rel="stylesheet" href="../styles/styles.css" />
-    <link rel="stylesheet" href="../styles/new-post.css" />
-    <title>rentMe</title>
-  </head>
 
-  <body>
-    <header class="site-header">
-      <a href="/"><img class="logo" src="../assets/logo.png" alt="logo" /></a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png" />
+  <link rel="stylesheet" href="../styles/styles.css" />
+  <link rel="stylesheet" href="../styles/new-post.css" />
+  <title>rentMe</title>
+</head>
 
-      <button>liked properties</button>
-      <span>New post</span>
-      <details id="user-menu" class="user-menu">
-        <summary class="user-menu__summary">
-          <img
-            id="user-menu-avatar"
-            src="https://avatars.githubusercontent.com/u/105358860?v=4"
-            alt="avatar picture"
-            class="user-menu__picture"
-          />
-        </summary>
-        <ul class="user-menu__pop-up-list">
-          <li id="username">Guest</li>
-          <li><button id="logoutBtn" class="flow">Logout</button></li>
-        </ul>
-      </details>
-    </header>
+<body>
+  <header class="site-header">
+    <a href="/"><img class="logo" src="../assets/logo.png" alt="logo" /></a>
 
-    <main class="main-flow flow">
-      <form method="post" name="newPost">
-        <article id="transaction" class="transaction__container __container">
-          <div id="selling-container" class="transaction__button">
-            <input type="radio" name="transaction" id="Purchase" />
-            <label for="Purchase" class="transaction__label">For Sale</label>
-          </div>
-          <div id="leasing-container" class="transaction__button">
-            <input type="radio" name="transaction" id="Lease" />
-            <label for="Lease" class="transaction__label">For Rent</label>
-          </div>
-        </article>
-        <article class="__container">
-          <label for="title">Street and Number: </label>
-          <input type="text" id="title" name="title" required />
+    <button>liked properties</button>
+    <span>New post</span>
+    <details id="user-menu" class="user-menu">
+      <summary class="user-menu__summary">
+        <img id="user-menu-avatar" src="https://avatars.githubusercontent.com/u/105358860?v=4" alt="avatar picture"
+          class="user-menu__picture" />
+      </summary>
+      <ul class="user-menu__pop-up-list">
+        <li id="username">Guest</li>
+        <li><button id="logoutBtn" class="flow">Logout</button></li>
+      </ul>
+    </details>
+  </header>
 
-          <label for="type">Type:</label>
-          <select id="type" name="type" required>
-            <option value="Apartment" selected>Apartment</option>
-            <option value="House">House</option>
-            <option value="Loft">Loft</option>
-          </select>
+  <main class="main-flow flow">
+    <form method="post" name="newPost">
+      <article id="transaction" class="transaction__container __container">
+        <div id="selling-container" class="transaction__button">
+          <input type="radio" name="transaction" id="Purchase" />
+          <label for="Purchase" class="transaction__label">For Sale</label>
+        </div>
+        <div id="leasing-container" class="transaction__button">
+          <input type="radio" name="transaction" id="Lease" />
+          <label for="Lease" class="transaction__label">For Rent</label>
+        </div>
+      </article>
+      <article class="__container">
+        <label for="title">Street and Number: </label>
+        <input type="text" id="title" name="title" required />
 
-          <label for="neighborhood">Neighborhood:</label>
-          <input type="text" id="neighborhood" name="neighborhood" required />
+        <label for="type">Type:</label>
+        <select id="type" name="type" required>
+          <option value="Apartment" selected>Apartment</option>
+          <option value="House">House</option>
+          <option value="Loft">Loft</option>
+        </select>
 
-          <label for="city">City:</label>
-          <input type="text" id="city" name="city" required />
+        <label for="neighborhood">Neighborhood:</label>
+        <input type="text" id="neighborhood" name="neighborhood" required />
 
-          <label for="bedrooms">Bedrooms:</label>
-          <input type="number" id="bedrooms" name="bedrooms" required />
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required />
 
-          <label for="floor">Floor:</label>
-          <input type="number" id="floor" name="floor" required />
+        <label for="bedrooms">Bedrooms:</label>
+        <input type="number" id="bedrooms" name="bedrooms" min="1" required />
 
-          <label for="squareMeters">Square Meters:</label>
-          <input type="number" id="squareMeters" name="squareMeters" required />
+        <label for="floor">Floor:</label>
+        <input type="number" id="floor" name="floor" required />
 
-          <div id="rent-price" class="display-none">
-            <label for="monthlyRentInNIS">Monthly Rent ₪:</label>
-            <input
-              type="number"
-              id="monthlyRentInNIS"
-              name="monthlyRentInNIS"
-            />
-          </div>
+        <label for="squareMeters">Square Meters:</label>
+        <input type="number" id="squareMeters" name="squareMeters" min="1" required />
 
-          <div id="sell-price" class="display-none">
-            <label for="priceInNIS">Price ₪:</label>
-            <input type="number" id="priceInNIS" name="priceInNIS" />
-          </div>
+        <div id="rent-price" class="display-none">
+          <label for="monthlyRentInNIS">Monthly Rent ₪:</label>
+          <input type="number" id="monthlyRentInNIS" name="monthlyRentInNIS" min="1" />
+        </div>
 
-          <label>Amenities:</label>
-          <div>
-            <label for="hasBalcony">Balcony:</label>
-            <input type="checkbox" id="hasBalcony" name="hasBalcony" />
+        <div id="sell-price" class="display-none">
+          <label for="priceInNIS">Price ₪:</label>
+          <input type="number" id="priceInNIS" name="priceInNIS" min="1" />
+        </div>
 
-            <label for="hasParking">Parking:</label>
-            <input type="checkbox" id="hasParking" name="hasParking" />
+        <label>Amenities:</label>
+        <div>
+          <label for="hasBalcony">Balcony:</label>
+          <input type="checkbox" id="hasBalcony" name="hasBalcony" />
 
-            <label for="hasAC">AC:</label>
-            <input type="checkbox" id="hasAC" name="hasAC" />
+          <label for="hasParking">Parking:</label>
+          <input type="checkbox" id="hasParking" name="hasParking" />
 
-            <label for="arePetsAllowed">Pets Allowed:</label>
-            <input type="checkbox" id="arePetsAllowed" name="arePetsAllowed" />
+          <label for="hasAC">AC:</label>
+          <input type="checkbox" id="hasAC" name="hasAC" />
 
-            <label for="isSmokingAllowed">Smoking Allowed:</label>
-            <input
-              type="checkbox"
-              id="isSmokingAllowed"
-              name="isSmokingAllowed"
-            />
+          <label for="arePetsAllowed">Pets Allowed:</label>
+          <input type="checkbox" id="arePetsAllowed" name="arePetsAllowed" />
 
-            <label for="hasElevator">Elevator:</label>
-            <input type="checkbox" id="hasElevator" name="hasElevator" />
-          </div>
+          <label for="isSmokingAllowed">Smoking Allowed:</label>
+          <input type="checkbox" id="isSmokingAllowed" name="isSmokingAllowed" />
 
-          <label for="description">Description:</label>
-          <textarea
-            id="description"
-            name="description"
-            rows="4"
-            required
-          ></textarea>
+          <label for="hasElevator">Elevator:</label>
+          <input type="checkbox" id="hasElevator" name="hasElevator" />
+        </div>
 
-          <label for="images">Images (comma-separated URLs):</label>
-          <input type="text" id="images" name="images" required />
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
 
-          <label for="availabilityDate">Availability Date:</label>
-          <input type="date" id="availabilityDate" name="availabilityDate" />
+        <label for="images">Images (comma-separated URLs):</label>
+        <input type="text" id="images" name="images" required />
 
-          <button method="post" type="submit">Submit</button>
-        </article>
-      </form>
-    </main>
+        <label for="availabilityDate">Availability Date:</label>
+        <input type="date" id="availabilityDate" name="availabilityDate" />
 
-    <script type="module" src="../controller/new-post.js"></script>
-  </body>
+        <button method="post" type="submit">Submit</button>
+      </article>
+    </form>
+  </main>
+
+  <script type="module" src="../controller/new-post.js"></script>
+</body>
+
 </html>

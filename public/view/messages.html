@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/messages.css">
+    <title>rentMe</title>
+</head>
+
+<body>
+    <header class="site-header">
+        <a href="/"><img class="logo" src="../assets/logo.png" alt="logo"></a>
+
+        <button>liked properties</button>
+        <button id="new-post-btn">➕ new post</button>
+        <details id="user-menu" class="user-menu">
+            <summary class="user-menu__summary">
+                <img id="user-menu-avatar" src="https://avatars.githubusercontent.com/u/105358860?v=4"
+                    alt="avatar picture" class="user-menu__picture" />
+            </summary>
+            <ul class="user-menu__pop-up-list">
+                <li id="username">Guest</li>
+                <li><button id="logoutBtn" class="flow">Logout</button></li>
+            </ul>
+        </details>
+
+    </header>
+
+
+    <script type="module" src="../controller/messages.js"></script>
+</body>
+
+</html>
