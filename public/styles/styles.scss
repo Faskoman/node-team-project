@@ -142,3 +142,11 @@ li {
     border-color: transparent;
     font-weight: 600;
 }
+
+.--apear-as-link {
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
