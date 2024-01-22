@@ -28,7 +28,7 @@ interface Property extends Document {
     name: string;
     phone: string;
     email: string;
-    id: Types.ObjectId;
+    _id: Types.ObjectId;
   };
   availabilityDate?: Date;
   createdAt: Date;
@@ -66,7 +66,7 @@ const propertySchema = new Schema<Property>({
     name: { type: String, required: true },
     phone: { type: String, required: true },
     email: { type: String, required: true },
-    id: { type: Schema.Types.ObjectId, ref: "User" },
+    _id: { type: Schema.Types.ObjectId, ref: "User" },
   },
   availabilityDate: { type: Date },
   createdAt: { type: Schema.Types.Date , default: () => new Date() }

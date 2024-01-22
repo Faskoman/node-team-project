@@ -105,18 +105,6 @@ async function app() {
       property.contactInformation[contactField].toString();
   }
 
-  function openMessageArea() {
-    const messageTextForm = document.getElementById(
-      "message-contact"
-    ) as HTMLFormElement;
-    if (!messageTextForm) {
-      throw new Error("Couldnt find message form");
-    }
-    document.getElementById("contact-name")?.addEventListener("click", () => {
-      toggleDisplay(messageTextForm);
-    });
-  }
-
   function renderPictures() {
     const picturesContainer = document.getElementById("property-pictures");
 
@@ -159,6 +147,51 @@ async function app() {
       toggleDisplay(contactInfo);
     }, 300);
   });
+
+  function openMessageArea() {
+    const messageTextForm = document.getElementById(
+      "message-contact"
+    ) as HTMLFormElement;
+    if (!messageTextForm) {
+      throw new Error("Couldnt find message form");
+    }
+    document.getElementById("contact-name")?.addEventListener("click", () => {
+      toggleDisplay(messageTextForm);
+    });
+  }
+
+  document.forms
+    .namedItem("message-contact")
+    ?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      try {
+        const formData = new FormData(e.target as HTMLFormElement);
+
+        const body = JSON.stringify({
+          creationDate: new Date(),
+          author: { id: user._id, name: user.username },
+          recipient: property.contactInformation._id,
+          content: formData.get("message-content"),
+          wasRead: false,
+        });
+
+        const res = await fetch("/view/api/messages/message-contact", {
+          method: "POST",
+          body,
+          headers: {
+            "Content-Type": "application/json",
+            "Content-Length": body.length.toString(),
+          },
+        });
+
+        if (res.status >= 400) {
+          throw new Error();
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    });
 }
 
 app();
