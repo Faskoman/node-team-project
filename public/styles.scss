@@ -1,0 +1,151 @@
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    font-size: calc(1rem + 0.5vw);
+    color-scheme: light dark;
+}
+
+.site-header {
+    box-shadow: 0px 7px 12px -4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__link {
+        text-decoration: none;
+        color: $text;
+    }
+}
+
+body {
+    background-color: $background;
+    color: $text;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.logo {
+    width: min(10vw, 75px);
+    aspect-ratio: 1;
+    mix-blend-mode: exclusion;
+    border-radius: 50%;
+}
+
+input,
+button,
+textarea,
+select {
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+}
+a {
+    text-decoration: none;
+    color: $text;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.main-flow {
+    width: min(85ch, 100% - 2rem);
+    margin-inline: auto;
+}
+
+.flow {
+    margin-block-start: 1.2rem;
+}
+
+.--small-text {
+    font-size: small;
+}
+
+.columned-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.centered-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.--adapted-text-size {
+    font-size: calc(.2rem + 1vw);
+}
+
+.display-none {
+    display: none;
+}
+
+
+.user-menu {
+    position: relative;
+    margin-inline-end: .2em;
+    margin-block-start: .2em;
+
+    &__picture {
+        border-radius: 50%;
+        border: 4px double $text;
+        width: min(10vw, 75px);
+    }
+
+    &__summary {
+        list-style: none;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    &__pop-up-list {
+        position: absolute;
+        text-align: center;
+        background: $secondary;
+        border: 2px solid $text;
+        color: $text;
+        font-weight: 600;
+        border-radius: 8px;
+        padding: 1rem;
+        right: 1vw;
+        top: calc(100% + 0.5rem);
+        z-index: 1;
+        line-height: 1.6rem;
+
+        &__link {
+            transition: all 200ms ease;
+
+            &:hover {
+                scale: 1.1;
+            }
+        }
+    }
+}
+
+.--no-decoration-inherited-color {
+    text-decoration: none;
+    color: inherit;
+}
+
+#logoutBtn {
+    cursor: pointer;
+    background-color: transparent;
+    border-color: transparent;
+    font-weight: 600;
+}
+
+.--apear-as-link {
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
