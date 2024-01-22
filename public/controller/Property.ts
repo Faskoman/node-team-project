@@ -47,14 +47,14 @@ export async function getProperties() {
   return properties;
 }
 
-export type PropertyListResult = Pick<Property, "_id" | "title" | "city" | "floor" | "neighborhood" | "bedrooms" >[];
+export type PropertyListResult = Pick<Property, "_id" | "title" | "city" | "floor" | "neighborhood" | "bedrooms" | "squareMeters" | "cost">[];
 
 export async function renderListItem(properties: PropertyListResult) {
   const gridBoard = document.getElementById("gridboard");
   if (!gridBoard) {
     throw new Error("grid element not in page");
   }
-  
-    gridBoard.innerHTML = properties.map((property) =>`<li class="grid-item"><a href="/view/property-details.html#${property._id}">${property.title}, ${property.floor}, ${property.city}, ${property.neighborhood},  ${property.bedrooms} </a></li>`).join("\n");
+  //`<li class="grid-item"><a href="/view/property-details.html#${property._id}">${property.title}, ${property.floor}, ${property.city}, ${property.neighborhood},  ${property.bedrooms} </a></li>`);
+  gridBoard.innerHTML = properties.map((property) =>`<li class="grid-item"><a href="/view/property-details.html#${property._id}"> <img src="" alt=""> <div>${property.title}, ${property.city}, ${property.neighborhood},</div> <div class="item-info">${property.floor},  ${property.bedrooms}, ${property.squareMeters} </div><div>${property.cost}</div></a></li>`).join("\n")
     
 };
