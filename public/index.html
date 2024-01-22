@@ -29,23 +29,32 @@
       </details>
 
     </header>
+    
     <main class="main">
         <article class="filters-article">
-            <form name="filters">
+            <form name="filters" id="search">
                 <!-- add filters... -->
+                <div class="div-filters">
+                <label for="search">search</label>
+                <input type="search" placeholder="search" id="search" name="search">
+                </div> 
+
+                <div class="div-filters">
+                <label for="">street </label>
+                <input type="text" placeholder="street">
+                </div>
+
+                <div class="div-filters">
+                    <label for="">rooms</label>
+                    <input type="number" min="0" placeholder="rooms">
+                </div>
+
                 <select name="transaction" id="transaction">
                     <option value="Lease" selected>for rent</option><!-- rent or buy  -->
                     <option value="Purchase">for sale</option>
                 </select>
-
-                <label for=""></label>
-                <input type="text" placeholder="city"><!--  -->
-                                        
-                <label for=""></label>
-                <input type="text" placeholder="street">
-   
-                <label for=""></label>
-                <input type="number" min="0" placeholder="rooms">
+                
+                <button>search</button>
             </form>
         </article>
 
