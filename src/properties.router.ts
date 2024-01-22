@@ -102,3 +102,21 @@ router.get('/', async (_, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
+
+router.get("/", async (req, res, next) => {
+  try {
+      const search = req.query.search?.toString() ?? ".*";
+      const escapedSearch = search.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const searchPattern = new RegExp(escapedSearch, "i");
+      const property = await Property.find(
+          { $or: [{ title: searchPattern }, { city: searchPattern }, { neighborhood: searchPattern }] },
+          { title: true, city: true, neighborhood: true }
+      );
+
+      res.send(property);
+  } catch (err) {
+      console.error("Error fetching properties:", err);
+      res.status(500).send({ error: "Internal Server Error" });
+      next(err);
+  }
+});

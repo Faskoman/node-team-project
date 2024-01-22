@@ -83,7 +83,10 @@ export async function renderListItem(properties: PropertyListResult) {
   priceCheck();
 }
 
+export async function getproperty(search?: string): Promise<PropertyListResult> {
+  const query = search ? `?search=${search}` : "";
+  const res = await fetch(`/view/api/properties${query}`);
 
-
-
+  return res.json();
+}
 

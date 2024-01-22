@@ -30,21 +30,23 @@
     </header>
     <main class="main">
         <article class="filters-article">
-            <form name="filters">
+            <form name="filters" id="search">
                 <!-- add filters... -->
                 <select name="transaction" id="transaction">
                     <option value="Lease" selected>for rent</option><!-- rent or buy  -->
                     <option value="Purchase">for sale</option>
                 </select>
 
-                <label for=""></label>
-                <input type="text" placeholder="city"><!--  -->
+                <label for="search">search</label>
+                <input type="search" placeholder="search" id="search" name="search">
                                         
                 <label for=""></label>
                 <input type="text" placeholder="street">
    
                 <label for=""></label>
                 <input type="number" min="0" placeholder="rooms">
+
+                <button>search</button>
             </form>
         </article>
 
