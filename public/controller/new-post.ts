@@ -5,6 +5,7 @@ import {
   hideDisplay,
   logout,
   redirect,
+  resetInputValue,
   showDisplay,
 } from "./funcs.js";
 
@@ -121,6 +122,4 @@ function togglePayment() {
   });
 }
 
-function resetInputValue(input: string) {
-  (document.getElementById(input) as HTMLInputElement).value = "";
-}
+

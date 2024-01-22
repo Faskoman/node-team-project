@@ -27,6 +27,7 @@ type Property = {
     name: string;
     phone: string;
     email: string;
+    _id: string;
   };
   availabilityDate?: Date;
 };

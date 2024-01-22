@@ -12,4 +12,27 @@ router.get("/", async (_, res) => {
   }
 });
 
+router.post("/message-contact", async (req, res, next) => {
+  try {
+    const { creationDate, author, recipient, content, wasRead } = req.body;
 
+    if (!creationDate || !author || !recipient || !content ) {
+      res.status(400);
+      res.send("Must provide all fields of the property...");
+      return;
+    }
+
+    const message = await Message.create({
+      creationDate,
+      author,
+      recipient,
+      content,
+      wasRead,
+    });
+
+    console.log(message);
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
