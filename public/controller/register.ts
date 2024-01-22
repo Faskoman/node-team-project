@@ -9,8 +9,7 @@ document.forms.namedItem("register")?.addEventListener("submit", async (e) => {
       email: formData.get("email"),
       username: formData.get("username"),
       phone: formData.get("phone"),
-      password: formData.get("password"),
-      messages: [],
+      password: formData.get("password")
     });
   
     const res = await fetch("/api/auth/register", {

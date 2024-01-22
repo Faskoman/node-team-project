@@ -6,7 +6,6 @@ interface User {
   username: string;
   phone: string;
   password: string;
-  messages?: string[];
 }
 
 const schema = new Schema<User>({
@@ -18,8 +17,7 @@ const schema = new Schema<User>({
     required: true,
     set: hashPassword,
     select: false,
-  },
-  messages: { type: [String] },
+  }
 });
 
 function hashPassword(value: string) {
