@@ -1,0 +1,67 @@
+@import 'colors';
+
+#messages-container {
+    box-shadow: 0px 0px 15px 6px rgba(0, 0, 0, 0.1);
+
+    & :nth-child(1)>.message-box__label {
+        border-radius: 8px 8px 0 0;
+    }
+
+    & :nth-last-child(1)>.message-box__label {
+        border-radius: 0 0 8px 8px;
+
+        &~div {
+            border-radius: 4px 4px 10px 10px;
+        }
+    }
+
+    .message-box__label:has(+ input:checked) {
+        color: $text;
+        font-weight: 600;
+    }
+}
+
+.message-box {
+    background-color: $tertiary;
+
+    .message-box__label+input:checked {
+
+        &+.message {
+            height: fit-content;
+            padding: 1ch;
+        }
+    }
+
+    input {
+        display: none;
+    }
+
+    &__label {
+        color: $unmarked;
+        text-transform: capitalize;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr auto;
+        text-align: center;
+        cursor: pointer;
+        padding: 1ch;
+        border: 1px solid $text;
+
+        &__content {
+            text-align: start;
+            width: 100%;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+}
+
+.message {
+    height: 0;
+    overflow: hidden;
+    background-color: $secondary;
+}
+
+.--message-text-size {
+    font-size: calc(.5rem + 1vw); 
+}

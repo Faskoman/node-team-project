@@ -39,6 +39,7 @@ body {
     mix-blend-mode: exclusion;
     border-radius: 50%;
 }
+
 input,
 button,
 textarea,
@@ -117,13 +118,22 @@ li {
         padding: 1rem;
         right: 1vw;
         top: calc(100% + 0.5rem);
-        width: calc(10ch + 5vw);
         z-index: 1;
+        line-height: 1.6rem;
 
-        &__item {
-            list-style: none;
+        &__link {
+            transition: all 200ms ease;
+
+            &:hover {
+                scale: 1.1;
+            }
         }
     }
+}
+
+.--no-decoration-inherited-color {
+    text-decoration: none;
+    color: inherit;
 }
 
 #logoutBtn {
@@ -131,9 +141,4 @@ li {
     background-color: transparent;
     border-color: transparent;
     font-weight: 600;
-    transition: all 200ms ease;
-
-    &:hover {
-        scale: 1.1;
-    }
 }

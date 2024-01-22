@@ -4,7 +4,7 @@
 #property-pictures {
     display: grid;
     grid-template-columns: 2fr .7vw 1fr;
-    grid-template-rows: 1fr .7vw 1fr;
+    grid-template-rows: 1fr .4vw 1fr;
 }
 
 .property-picture-1,
@@ -13,11 +13,12 @@
     width: 100%;
     height: 100%;
     max-height: 500px;
+    object-fit: cover;
 }
 
 .property-picture-2,
 .property-picture-3 {
-    max-height: calc(250px - .7vw);
+    max-height: calc(250px - .3vw);
 }
 
 .property-picture-1 {
@@ -46,6 +47,7 @@
     border-radius: 0 0 16px 0;
     grid-row: 3 / 4;
     grid-column: 3 / 4;
+    align-self: end;
 }
 
 #property-details {

@@ -22,7 +22,8 @@
         </summary>
         <ul class="user-menu__pop-up-list">
           <li id="username">Guest</li>
-          <li><button id="logoutBtn" class="flow">Logout</button></li>
+          <li class="user-menu__pop-up-list__link"><a href="/view/messages.html" class="--no-decoration-inherited-color">Messages</a></li>
+          <li class="user-menu__pop-up-list__link"><button id="logoutBtn">Logout</button></li>
         </ul>
       </details>
 
@@ -37,11 +38,13 @@
                 </select>
 
                 <label for=""></label>
-                <input type="text"><!--  -->
+                <input type="text" placeholder="city"><!--  -->
                                         
                 <label for=""></label>
-                <input type="text">
- 
+                <input type="text" placeholder="street">
+   
+                <label for=""></label>
+                <input type="number" min="0" placeholder="rooms">
             </form>
         </article>
 

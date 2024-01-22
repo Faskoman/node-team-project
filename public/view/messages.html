@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/messages.css">
+    <title>rentMe</title>
+</head>
+
+<body>
+    <header class="site-header">
+        <a href="/"><img class="logo" src="../assets/logo.png" alt="logo"></a>
+
+        <button>liked properties</button>
+        <button id="new-post-btn">➕ new post</button>
+        <details id="user-menu" class="user-menu">
+            <summary class="user-menu__summary">
+                <img id="user-menu-avatar" src="https://avatars.githubusercontent.com/u/105358860?v=4"
+                    alt="avatar picture" class="user-menu__picture" />
+            </summary>
+            <ul class="user-menu__pop-up-list">
+                <li id="username">Guest</li>
+                <li><button id="logoutBtn" class="flow">Logout</button></li>
+            </ul>
+        </details>
+    </header>
+
+
+    <main class="main-flow flow">
+        <article id="messages-container" class="--message-text-size">
+            <div class="message-box">
+                <label for="message-1" class="message-box__label">
+                    <span class="message-box__label__content">Lorem ipsum, dolor sit amet consectetur
+                        adipisicing.</span>
+                    <span>message author</span>
+                    <span class="message-box__label__date">message date</span>
+                    <button id="replyBtn">Reply</button>
+                </label>
+                <input type="radio" name="message" id="message-1">
+                <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque delectus saepe
+                    illum quisquam ut
+                    optio perspiciatis totam sunt laboriosam laudantium. Commodi quia qui earum quasi sequi hic eum quam
+                    aspernatur. Consectetur placeat corrupti corporis, atque quidem accusamus veniam sapiente similique.
+                </div></input>
+            </div>
+            <div class="message-box">
+                <label for="message-2" class="message-box__label">
+                    <span class="message-box__label__content">one</span>
+                    <span>message author</span>
+                    <span class="message-box__label__date">message date</span>
+                </label>
+                <input type="radio" name="message" id="message-2" checked>
+                <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque delectus saepe
+                    illum quisquam ut
+                    optio perspiciatis totam sunt laboriosam laudantium. Commodi quia qui earum quasi sequi hic eum quam
+                    aspernatur. Consectetur placeat corrupti corporis, atque quidem accusamus veniam sapiente similique.
+                </div></input>
+            </div>
+            <div class="message-box">
+                <label for="message-3" class="message-box__label">
+                    <span class="message-box__label__content">Lorem ipsum, dolor sit amet consectetur
+                        adipisicing.</span>
+                    <span>message author</span>
+                    <span class="message-box__label__date">message date</span>
+                </label>
+                <input type="radio" name="message" id="message-3">
+                <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque delectus saepe
+                    illum quisquam ut
+                    optio perspiciatis totam sunt laboriosam laudantium. Commodi quia qui earum quasi sequi hic eum quam
+                    aspernatur. Consectetur placeat corrupti corporis, atque quidem accusamus veniam sapiente similique.
+                </div></input>
+            </div>
+        </article>
+    </main>
+
+
+    <script type="module" src="../controller/messages.js"></script>
+</body>
+
+</html>
