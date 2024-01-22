@@ -3,7 +3,7 @@ import { Message } from "./message.model";
 
 export const router = Router();
 
-router.get("/", async (_, res) => {
+router.get("/", async (req, res) => {
   try {
     const messages = await Message.find();
     res.json(messages);

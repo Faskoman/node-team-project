@@ -1,5 +1,5 @@
 import { createHash } from "crypto";
-import { Schema, Types, model } from "mongoose";
+import { Schema, model } from "mongoose";
 
 interface User {
   email: string;
