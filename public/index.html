@@ -14,7 +14,11 @@
     <header class="site-header">
     <a href="#"><img class="logo" src="assets/logo.png" alt="logo"></a>
 
-    <button>liked properties</button>
+    <div class="search-bar">
+    <input type="search" placeholder="search" id="search" name="search">
+    <button>search</button>
+    </div>
+
     <button id="new-post-btn">➕ New post</button>
     <details id="user-menu" class="user-menu">
         <summary class="user-menu__summary">
@@ -30,32 +34,6 @@
     </header>
     
     <main class="main">
-        <article class="filters-article">
-            <form name="filters" id="search">
-                <!-- add filters... -->
-                <div class="div-filters">
-                <label for="search">search</label>
-                <input type="search" placeholder="search" id="search" name="search">
-                </div> 
-
-                <div class="div-filters">
-                <label for="">street </label>
-                <input type="text" placeholder="street">
-                </div>
-
-                <div class="div-filters">
-                    <label for="">rooms</label>
-                    <input type="number" min="0" placeholder="rooms">
-                </div>
-
-                <select name="transaction" id="transaction">
-                    <option value="Lease" selected>for rent</option><!-- rent or buy  -->
-                    <option value="Purchase">for sale</option>
-                </select>
-                
-                <button>search</button>
-            </form>
-        </article>
 
         <ul class="grid-board" id="gridboard">
             <li class="grid-item"></li>

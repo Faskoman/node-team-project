@@ -25,6 +25,17 @@ html {
         text-decoration: none;
         color: $text;
     }
+
+    & button {
+        background-color: $secondary;
+        border-radius: 6px;
+
+
+        &:hover {
+            background-color: $tertiary;
+            cursor: pointer;
+        }
+    }
 }
 
 body {
