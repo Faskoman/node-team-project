@@ -30,6 +30,7 @@ interface Property extends Document {
     email: string;
   };
   availabilityDate?: Date;
+  createdAt: Date;
 }
 
 const propertySchema = new Schema<Property>({
@@ -66,6 +67,7 @@ const propertySchema = new Schema<Property>({
     email: { type: String, required: true },
   },
   availabilityDate: { type: Date },
+  createdAt: { type: Schema.Types.Date , default: () => new Date() }
 });
 
 export const Property = model<Property>(

@@ -2,8 +2,10 @@ import { getProperties, renderListItem } from "./Property.js";
 import { getCurrentUser, handleUser, logout, newPostLink } from "./funcs.js";
 
 async function app() {
-  const user = await getCurrentUser();
-  const properties = await getProperties();
+  const [user, properties] = await Promise.all([
+    await getCurrentUser(),
+    await getProperties(),
+  ]);
 
   renderListItem(properties);
   handleUser(user);

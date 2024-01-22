@@ -16,10 +16,6 @@ async function app() {
   redirect();
   togglePayment();
 
-  const phone = user.phone;
-  const name = user.username;
-  const email = user.email;
-
   sessionStorage.clear();
 
   document.forms.namedItem("newPost")?.addEventListener("submit", async (e) => {
@@ -69,11 +65,12 @@ async function app() {
           .replaceAll(" ", "")
           .split(","),
         contactInformation: {
-          name: name,
-          phone: phone,
-          email: email,
+          name: user.username,
+          phone: user.phone,
+          email: user.email,
         },
         availabilityDate: formData.get("availabilityDate") || null,
+        createdAt: new Date(),
       });
 
       const res = await fetch("/view/api/properties/new-post", {
