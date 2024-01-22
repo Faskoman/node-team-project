@@ -23,7 +23,9 @@
             </summary>
             <ul class="user-menu__pop-up-list">
                 <li id="username">Guest</li>
-                <li><button id="logoutBtn" class="flow">Logout</button></li>
+                <li class="user-menu__pop-up-list__link"><a href="/view/messages.html"
+                        class="--no-decoration-inherited-color">Messages</a></li>
+                <li class="user-menu__pop-up-list__link"><button id="logoutBtn">Logout</button></li>
             </ul>
         </details>
 
@@ -53,8 +55,13 @@
                         </svg>
                     </button>
                     <div id="contact-info" class="display-none">
-                        <span id="contact-name" class="centered-flex"></span>
+                        <span id="contact-name" class="centered-flex --apear-as-link" title="message contact"></span>
                         <span id="contact-phone" class="centered-flex"></span>
+                        <form id="message-contact" action="message-contact" class="display-none">
+                            <textarea name="message-content" id="message-content" rows="5"
+                                placeholder="write a message to contact" class="centered-flex"></textarea>
+                            <button id="sendBtn">Send</button>
+                        </form>
                     </div>
                 </div>
             </div>

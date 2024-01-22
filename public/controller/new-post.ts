@@ -68,6 +68,7 @@ async function app() {
           name: user.username,
           phone: user.phone,
           email: user.email,
+          id: user._id,
         },
         availabilityDate: formData.get("availabilityDate") || null,
         createdAt: new Date(),

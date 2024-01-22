@@ -1,5 +1,3 @@
-import { getJSON } from "./funcs";
-
 type venuType = "Apartment" | "House" | "Loft";
 
 type Transaction = "Lease" | "Purchase";
