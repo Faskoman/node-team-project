@@ -138,3 +138,7 @@ export function clickSound() {
   click.play();
 }
 
+export function formatDate(dateString: Date) {
+  const formattedDate = new Date(dateString).toLocaleDateString();
+  return formattedDate;
+}
